@@ -48,7 +48,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "es";
+  console.keyMap = "en";
 
   # User configuration.
   users.users.es-sai-fi = {
