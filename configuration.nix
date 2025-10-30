@@ -43,12 +43,12 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "en";
+    layout = "es";
     variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "en";
+  console.keyMap = "es";
 
   # User configuration.
   users.users.es-sai-fi = {
