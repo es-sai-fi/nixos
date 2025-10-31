@@ -85,7 +85,6 @@
     programs.eza.enable = true;
     programs.alacritty.enable = true;
     programs.zellij.enable = true;
-
     programs.fuzzel.enable = true;
 
     services.mako.enable = true;
@@ -156,21 +155,17 @@
     enable = true;
     enableSSHSupport = true;
   };
-
   programs.steam = {
     enable = true;
     extraCompatPackages = with pkgs; [ proton-ge-bin ];  
   };
-
   programs.nix-ld.enable = true;
-
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.zoxide.enable = true;
 
   # Services.
   services.gnome.gnome-keyring.enable = true;
-  
   services.flatpak.enable = true;
   
   # Firewall.
@@ -181,6 +176,8 @@
   # Security.
   security.apparmor.enable = true;
   security.polkit.enable = true;
+  security.sudo.enable = false;
+  security.sudo-rs.enable = true;
 
   # Session variables.
   environment.sessionVariables = {
