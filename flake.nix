@@ -26,6 +26,7 @@
 	inputs.home-manager.nixosModules.default
         ./modules/neovim-nightly.nix
         ./modules/aagl.nix
+        ./modules/niri.nix  
       ];
     };
   };

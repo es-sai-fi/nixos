@@ -11,9 +11,11 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
-  # Bootloader.
+  # Boot.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.tmp.cleanOnBoot = true;
 
   # Latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -71,10 +73,22 @@
       };
     };
 
+    home.packages = with pkgs; [  
+      wl-clipboard
+      wlsunset
+      swaybg
+      waybar
+    ];
+
     programs.fzf.enable = true;
     programs.ripgrep.enable = true;
     programs.eza.enable = true;
     programs.alacritty.enable = true;
+    programs.zellij.enable = true;
+
+    programs.fuzzel.enable = true;
+
+    services.mako.enable = true;
 
     home.stateVersion = "25.05";
   };
@@ -103,15 +117,7 @@
     bleachbit
     obs-studio
     obsidian
-  
-    wl-clipboard
-    wlsunset
-    swaybg
-    fuzzel
-    mako
-    alacritty
-    zellij
-    
+
     gh
     fzf
     bat
@@ -152,7 +158,6 @@
   };
 
   programs.niri.enable = true;
-  programs.waybar.enable = true;
 
   programs.steam = {
     enable = true;
@@ -167,6 +172,8 @@
 
   # Services.
   services.gnome.gnome-keyring.enable = true;
+  
+  services.flatpak.enable = true;
   
   # Firewall.
   networking.firewall.enable = true;
