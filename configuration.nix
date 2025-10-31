@@ -78,7 +78,16 @@
       wlsunset
       swaybg
       waybar
+
+      statix
+      nixfmt
     ];
+
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
 
     programs.fzf.enable = true;
     programs.ripgrep.enable = true;
@@ -163,6 +172,7 @@
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.zoxide.enable = true;
+  programs.niri.enable = true;
 
   # Services.
   services.gnome.gnome-keyring.enable = true;

@@ -11,8 +11,14 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri.url = "github:sodiboo/niri-flake";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    niri = { 
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
@@ -22,11 +28,10 @@
       specialArgs = { inherit inputs; };
 
       modules = [
+        inputs.home-manager.nixosModules.default
         ./configuration.nix
-	inputs.home-manager.nixosModules.default
         ./modules/neovim-nightly.nix
         ./modules/aagl.nix
-        ./modules/niri.nix  
       ];
     };
   };
