@@ -11,7 +11,7 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = { 
+    niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -21,18 +21,32 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  outputs =
+    inputs@{ self, nixpkgs, ... }:
+    {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-      specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; };
 
-      modules = [
-        inputs.home-manager.nixosModules.default
-        ./configuration.nix
-        ./modules/neovim-nightly.nix
-        ./modules/aagl.nix
-      ];
+        modules = [
+          ./configuration.nix
+          ./hardware-configuration.nix
+
+          ./modules/system/boot.nix
+          ./modules/system/networking.nix
+          ./modules/system/security.nix
+          ./modules/system/services.nix
+          ./modules/system/programs.nix
+          ./modules/system/virtualization.nix
+
+          ./modules/users/es-sai-fi.nix
+
+          ./modules/neovim-nightly.nix
+          ./modules/aagl.nix
+
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
