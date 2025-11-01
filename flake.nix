@@ -32,19 +32,7 @@
         modules = [
           ./configuration.nix
           ./hardware-configuration.nix
-
-          ./modules/system/boot.nix
-          ./modules/system/networking.nix
-          ./modules/system/security.nix
-          ./modules/system/services.nix
-          ./modules/system/programs.nix
-          ./modules/system/virtualization.nix
-
-          ./modules/users/es-sai-fi.nix
-
-          ./modules/neovim-nightly.nix
-          ./modules/aagl.nix
-
+          ./modules
           inputs.home-manager.nixosModules.default
         ];
       };
