@@ -48,6 +48,28 @@
         alacritty.enable = true;
         zellij.enable = true;
         fuzzel.enable = true;
+        git = {
+          enable = true;
+          settings = {
+            user = {
+              name = "es-sai-fi";
+              email = "96452903+es-sai-fi@users.noreply.github.com";
+            };
+            extraConfig = {
+              init.defaultBranch = "main";
+              color.ui = "auto";
+              pull.rebase = "false";
+            };
+          };
+        };
+        gh = {
+          enable = true;
+          settings = {
+            git_protocol = "ssh";
+            prompt = "enabled";
+            editor = "nvim";
+          };
+        };
       };
 
       services = {
