@@ -7,8 +7,6 @@
         ./services
       ];
 
-      nixpkgs.config.allowUnfree = true;
-
       xdg.mimeApps = {
         enable = true;
         defaultApplications = {

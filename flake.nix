@@ -21,7 +21,6 @@
     };
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -38,10 +37,16 @@
           ./hardware-configuration.nix
           ./modules
           {
+            nixpkgs.overlays = [
+              inputs.neovim-nightly-overlay.overlays.default
+              inputs.niri.overlays.niri
+            ];
+          }
+          {
             imports = [ inputs.home-manager.nixosModules.default ];
             home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPkgs = true;
               extraSpecialArgs = { inherit inputs; };
             };
           }
