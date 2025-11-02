@@ -11,6 +11,7 @@
     ./neovim-nightly.nix
     ./niri.nix
     ./librewolf.nix
+    ./ssh.nix
   ];
 
   programs = {

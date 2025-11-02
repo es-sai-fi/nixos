@@ -11,6 +11,10 @@
       "privacy.clearOnShutdown.cookies" = false;
       "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
       "browser.translations.neverTranslateLanguages" = "en,es";
+      "font.name.monospace.x-western" = "JetBrainsMono Nerd Font Mono";
+      "font.default.x-western" = "JetBrainsMono Nerd Font Mono";
+      "font.name.serif.x-western" = "JetBrainsMono Nerd Font Mono";
+      "font.name.sans-serif.x-western" = "JetBrainsMono Nerd Font Mono";
     };
     policies = {
       DefaultDownloadDirectory = "\${home}/Downloads";
