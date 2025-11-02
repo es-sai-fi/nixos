@@ -1,11 +1,14 @@
-{ lib, ... }: {
+{ inputs, lib, ... }:
+{
+  imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
 
-  services.flatpak.remotes = lib.mkOptionDefault [ ];
+  services.flatpak = {
+    remotes = lib.mkOptionDefault [ ];
+    update.auto.enable = false;
+    uninstallUnmanaged = true;
 
-  services.flatpak.update.auto.enable = false;
-  services.flatpak.uninstallUnmanaged = true;
-
-  services.flatpak.packages = [
-    "org.vinegarhq.Sober"
-  ];
+    packages = [
+      "org.vinegarhq.Sober"
+    ];
+  };
 }
