@@ -1,6 +1,9 @@
 {
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
     functions = {
       _fzf_compgen_path = {
         body = ''

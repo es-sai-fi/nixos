@@ -283,7 +283,7 @@
       // which may be more convenient to use.
       // See the binds section below for more spawn examples.
 
-      spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/background.png"
+      spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/backgrounds/1.png"
 
       // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
       // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -387,7 +387,7 @@
           Mod+Shift+Escape { show-hotkey-overlay; }
 
           // Suggested binds for running programs: terminal, app launcher, screen locker.
-          Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+          Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
           Mod+E hotkey-overlay-title="Open Editor" {spawn "alacritty" "--title" "Nvim" "-e" "nvim"; }
           Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
           Mod+M hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }
