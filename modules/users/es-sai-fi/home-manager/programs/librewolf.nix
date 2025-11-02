@@ -8,7 +8,9 @@
       "pdfjs.pageColorsForeground" = "#DDDDDD";
       "pdfjs.pageColorsBackground" = "#111111";
       "browser.startup.page" = 3;
-      "browser.translation.neverForLanguages" = "en,es";
+      "privacy.clearOnShutdown.cookies" = false;
+      "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+      "browser.translations.neverTranslateLanguages" = "en,es";
     };
     policies = {
       DefaultDownloadDirectory = "\${home}/Downloads";
