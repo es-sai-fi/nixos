@@ -7,8 +7,6 @@
       "browser.toolbars.bookmarks.visibility" = "newtab";
       "pdfjs.pageColorsForeground" = "#DDDDDD";
       "pdfjs.pageColorsBackground" = "#111111";
-      "sidebar.position_start" = true;
-      "sidebar.verticalTabs" = true;
       "browser.startup.page" = 3;
       "browser.translation.neverForLanguages" = "en,es";
     };

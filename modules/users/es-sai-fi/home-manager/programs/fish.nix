@@ -4,6 +4,11 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
+    shellAliases = {
+      ls = "eza";
+      cd = "z";
+      find = "fd";
+    };
     functions = {
       _fzf_compgen_path = {
         body = ''
