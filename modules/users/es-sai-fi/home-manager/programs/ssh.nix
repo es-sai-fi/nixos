@@ -1,7 +1,21 @@
 {
   programs.ssh = {
     enable = true;
-    startAgent = true;
+    enableDefaultConfig = false;
+
+    matchBlocks."*" = {
+      forwardAgent = false;
+      serverAliveInterval = 0;
+      serverAliveCountMax = 3;
+      compression = false;
+      addKeysToAgent = "no";
+      hashKnownHosts = false;
+      userKnownHostsFile = "~/.ssh/known_hosts";
+      controlMaster = "no";
+      controlPath = "~/.ssh/master-%r@%n:%p";
+      controlPersist = "no";
+    };
+
     matchBlocks = {
       github = {
         host = "github.com";
@@ -9,7 +23,7 @@
         user = "git";
         identityFile = [ "~/.ssh/id_ed25519" ];
         identitiesOnly = true;
-        addKeysToAgent = true;
+        addKeysToAgent = "yes";
       };
     };
   };
