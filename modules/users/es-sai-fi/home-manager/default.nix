@@ -41,6 +41,7 @@
           bleachbit
           discord
           xwayland-satellite
+          obs-cmd
         ];
         stateVersion = "25.05";
         shell.enableFishIntegration = true;

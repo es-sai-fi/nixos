@@ -2,6 +2,7 @@
   services.wlsunset = {
     enable = true;
     temperature = {
+      day = 3201;
       night = 3200;
     };
     gamma = 0.9;
