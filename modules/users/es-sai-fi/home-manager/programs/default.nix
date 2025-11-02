@@ -10,6 +10,7 @@
     ./zellij.nix
     ./neovim-nightly.nix
     ./niri.nix
+    ./librewolf.nix
   ];
 
   programs = {

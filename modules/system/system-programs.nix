@@ -5,7 +5,6 @@
     git
     wget
     curl
-    librewolf
   ];
 
   programs = {
