@@ -8,6 +8,8 @@
     ./waybar.nix
     ./yazi.nix
     ./zellij.nix
+    ./neovim-nightly.nix
+    ./niri.nix
   ];
 
   programs = {

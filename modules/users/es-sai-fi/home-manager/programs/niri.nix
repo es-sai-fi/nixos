@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ inputs.niri.nixosModules.niri ];
+  imports = [ inputs.niri.homeModules.niri ];
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
