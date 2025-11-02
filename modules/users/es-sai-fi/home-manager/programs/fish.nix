@@ -8,6 +8,8 @@
       ls = "eza";
       cd = "z";
       find = "fd";
+      cat = "bat";
+      grep = "rg";
     };
     functions = {
       _fzf_compgen_path = {
