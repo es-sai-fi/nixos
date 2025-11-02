@@ -28,8 +28,17 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+  environment = {
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      FZF_DEFAULT_COMMAND = "fd --hidden --strip-cwd-prefix --exclude .git";
+      FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND";
+      FZF_ALT_C_COMMAND = "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
+    };
   };
 
   system.stateVersion = "25.05";

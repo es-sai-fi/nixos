@@ -1,5 +1,5 @@
 {
   imports = [
-    ./es-sai-fi.nix
+    ./es-sai-fi
   ];
 }

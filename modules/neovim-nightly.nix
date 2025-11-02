@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
   programs.neovim = {
@@ -6,4 +7,3 @@
     package = pkgs.neovim;
   };
 }
-

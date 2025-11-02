@@ -1,6 +1,13 @@
 {
   virtualisation = {
-    containers.enable = true;
+    containers = {
+      enable = true;
+      storage.settings = {
+        storage = {
+          driver = "overlay";
+        };
+      };
+    };
     podman = {
       enable = true;
       dockerCompat = true;
