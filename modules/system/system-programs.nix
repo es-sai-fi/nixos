@@ -5,6 +5,7 @@
     git
     wget
     curl
+    librewolf
   ];
 
   programs = {
@@ -15,4 +16,5 @@
 
     nix-ld.enable = true;
   };
+
 }

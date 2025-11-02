@@ -2,11 +2,13 @@
 {
   imports = [ inputs.niri.homeModules.niri ];
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs.overlays = [
+    inputs.niri.overlays.niri
+  ];
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     config = ''
       // This config is in the KDL format: https://kdl.dev
       // "/-" comments out the following node.
@@ -385,7 +387,7 @@
           Mod+Shift+Escape { show-hotkey-overlay; }
 
           // Suggested binds for running programs: terminal, app launcher, screen locker.
-          Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
+          Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
           Mod+E hotkey-overlay-title="Open Editor" {spawn "alacritty" "--title" "Nvim" "-e" "nvim"; }
           Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
           Mod+M hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }

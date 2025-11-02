@@ -1,6 +1,5 @@
 {
-
-  fish = {
+  programs.fish = {
     enable = true;
     functions = {
       _fzf_compgen_path = {

@@ -3,7 +3,7 @@
     ./fish.nix
     ./fuzzel.nix
     ./gh.nix
-    ./ghostty.nix
+    ./alacritty.nix
     ./git.nix
     ./waybar.nix
     ./yazi.nix

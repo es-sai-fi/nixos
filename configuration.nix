@@ -28,6 +28,20 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [
+          "gtk"
+        ];
+      };
+    };
+  };
+
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";

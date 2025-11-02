@@ -33,7 +33,10 @@
           ./configuration.nix
           ./hardware-configuration.nix
           ./modules
-          inputs.home-manager.nixosModules.default
+          {
+            imports = [ inputs.home-manager.nixosModules.default ];
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
         ];
       };
     };
