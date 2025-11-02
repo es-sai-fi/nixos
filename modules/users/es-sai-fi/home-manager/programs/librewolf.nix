@@ -5,8 +5,9 @@
       "webgl.disabled" = false;
       "privacy.resistFingerprinting" = false;
       "browser.toolbars.bookmarks.visibility" = "newtab";
-      "pdfjs.pageColorsForeground" = "#DDDDDD";
-      "pdfjs.pageColorsBackground" = "#111111";
+      "pdfjs.pageColorsForeground" = "#E0E0E0";
+      "pdfjs.pageColorsBackground" = "#1C1C1C";
+      "pdfjs.forcePageColors" = true;
       "browser.startup.page" = 3;
       "privacy.clearOnShutdown.cookies" = false;
       "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
