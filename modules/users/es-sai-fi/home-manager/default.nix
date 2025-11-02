@@ -43,6 +43,7 @@
           xwayland-satellite
           obs-cmd
           nautilus
+          xdg-utils
         ];
         stateVersion = "25.05";
         shell.enableFishIntegration = true;
