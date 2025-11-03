@@ -8,7 +8,6 @@
   programs.dankMaterialShell = {
     enable = true;
     niri = {
-      enableKeybinds = true;
       enableSpawn = true;
     };
     enableSystemd = true;
@@ -18,6 +17,7 @@
     enableSystemSound = true;
     default.settings = {
       theme = "dark";
+      clockDateFormat = "yyyy-MM-dd";
     };
   };
 }
