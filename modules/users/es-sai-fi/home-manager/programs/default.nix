@@ -1,11 +1,11 @@
 {
   imports = [
-    ./fish.nix
     #./fuzzel.nix
+    #./waybar.nix
+    ./fish.nix
     ./gh.nix
     ./alacritty.nix
     ./git.nix
-    #./waybar.nix
     ./yazi.nix
     ./zellij.nix
     ./neovim-nightly.nix

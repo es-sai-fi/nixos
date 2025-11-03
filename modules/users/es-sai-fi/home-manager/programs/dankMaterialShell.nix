@@ -17,7 +17,6 @@
     enableSystemSound = true;
     default.settings = {
       theme = "dark";
-      clockDateFormat = "yyyy-MM-dd";
     };
   };
 }

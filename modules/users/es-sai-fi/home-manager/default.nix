@@ -21,7 +21,6 @@
 
       home = {
         packages = with pkgs; [
-          wl-clipboard
           #swaybg
           statix
           nixfmt
