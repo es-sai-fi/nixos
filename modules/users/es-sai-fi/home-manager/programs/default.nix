@@ -11,13 +11,13 @@
     ./neovim-nightly.nix
     ./niri.nix
     ./librewolf.nix
+    ./starship.nix
   ];
 
   programs = {
     fzf.enable = true;
     ripgrep.enable = true;
     eza.enable = true;
-    starship.enable = true;
     zoxide.enable = true;
     bat.enable = true;
     fd.enable = true;

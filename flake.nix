@@ -45,8 +45,8 @@
           {
             imports = [ inputs.home-manager.nixosModules.default ];
             home-manager = {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPkgs = true;
+              useGlobalPkgs = true;
+              useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
             };
           }
