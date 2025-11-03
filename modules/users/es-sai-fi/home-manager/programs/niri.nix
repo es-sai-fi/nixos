@@ -67,7 +67,7 @@
            open-floating true
        }
 
-       window-rule {
+       /-window-rule {
            match app-id="Alacritty" title="Nvim"
 
            open-fullscreen true
