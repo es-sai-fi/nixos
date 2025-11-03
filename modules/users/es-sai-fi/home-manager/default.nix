@@ -42,6 +42,7 @@
           obs-cmd
           nautilus
           xdg-utils
+          minizinc
         ];
         sessionVariables = {
           NIXOS_OZONE_WL = "1";
