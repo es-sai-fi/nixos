@@ -8,7 +8,7 @@
   programs.dankMaterialShell = {
     enable = true;
     niri = {
-      enabledKeybinds = true;
+      enableKeybinds = true;
       enableSpawn = true;
     };
     enableSystemd = true;
