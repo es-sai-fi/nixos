@@ -1,7 +1,7 @@
 {
   imports = [
-    ./mako.nix
-    ./wlsunset.nix
+    #./mako.nix
+    #./wlsunset.nix
     ./podman.nix
     ./flatpak.nix
   ];

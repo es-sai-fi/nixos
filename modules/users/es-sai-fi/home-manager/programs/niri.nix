@@ -279,7 +279,7 @@
       // which may be more convenient to use.
       // See the binds section below for more spawn examples.
 
-      spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/backgrounds/1.png"
+      // spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/backgrounds/1.png"
 
       // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
       // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -386,9 +386,9 @@
           Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
           Mod+E hotkey-overlay-title="Open Editor" {spawn "alacritty" "--title" "Nvim" "-e" "nvim"; }
           Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
-          Mod+M hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }
-          Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }  
-          Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+          Mod+Y hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }
+          // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }  
+          // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
           Super+Shift+F1 hotkey-overlay-title="Start recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "start"; } 
           Super+Shift+F2 hotkey-overlay-title="Stop recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "stop"; }

@@ -22,7 +22,7 @@
       home = {
         packages = with pkgs; [
           wl-clipboard
-          swaybg
+          #swaybg
           statix
           nixfmt
           rustc

@@ -1,16 +1,17 @@
 {
   imports = [
     ./fish.nix
-    ./fuzzel.nix
+    #./fuzzel.nix
     ./gh.nix
     ./alacritty.nix
     ./git.nix
-    ./waybar.nix
+    #./waybar.nix
     ./yazi.nix
     ./zellij.nix
     ./neovim-nightly.nix
     ./niri.nix
     ./librewolf.nix
+    ./dankMaterialShell.nix
   ];
 
   programs = {
