@@ -1,7 +1,6 @@
 {
   imports = [
     ./system
-    ./users
-    ./aagl.nix
+    ./user
   ];
 }

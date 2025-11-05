@@ -17,6 +17,11 @@
     enableSystemSound = true;
     default.settings = {
       theme = "dark";
+      showDock = true;
+      dockAutoHide = true;
+      clockDateFormat = "yyyy-MM-dd";
+      weatherEnabled = false;
+      dankBarSquareCorners = true;
     };
   };
 }
