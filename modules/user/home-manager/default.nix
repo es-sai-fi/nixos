@@ -28,6 +28,7 @@
           cargo
           python3
           nodejs
+          go
           lm_sensors
           zip
           unzip
@@ -36,7 +37,7 @@
           obs-studio
           bleachbit
           discord
-	  obsidian
+          obsidian
           xwayland-satellite
           obs-cmd
           nautilus
