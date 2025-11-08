@@ -4,7 +4,10 @@
 
   services.flatpak = {
     remotes = lib.mkOptionDefault [ ];
-    update.auto.enable = false;
+    update = {
+      auto.enable = false;
+      onActivation = true;
+    };
     uninstallUnmanaged = true;
 
     packages = [
