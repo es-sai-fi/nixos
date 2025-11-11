@@ -50,6 +50,18 @@
           nix-env --list-generations
         '';
       };
+      dev = {
+        body = ''
+          if test (count $argv) -eq 0
+              echo "Usage: dev <flake-target> (e.g. #rust, #python)"
+              return 1
+          end
+
+          set target $argv[1]
+
+          nix develop ~/nixfiles/shell#$target
+        '';
+      };
       roblox = {
         body = "flatpak run org.vinegarhq.Sober";
       };
