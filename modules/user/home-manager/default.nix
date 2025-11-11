@@ -21,7 +21,6 @@
 
       home = {
         packages = with pkgs; [
-          #swaybg
           statix
           nixfmt
           lm_sensors

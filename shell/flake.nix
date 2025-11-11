@@ -1,7 +1,8 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -16,7 +17,7 @@
           ];
           shellHook = ''
             fish
-          ''
+          '';
         };
 
         node = pkgs.mkShell {
@@ -26,7 +27,7 @@
           ];
           shellHook = ''
             fish
-          ''
+          '';
         };
 
         go = pkgs.mkShell {
@@ -36,18 +37,29 @@
           ];
           shellHook = ''
             fish
-          ''
+          '';
         };
 
         python = pkgs.mkShell {
-          name = "python3";
+          name = "python-shell";
           inputsFrom = [ self.devShells.x86_64-linux.nvim ];
           packages = with pkgs; [
             python3
           ];
           shellHook = ''
             fish
-          ''
+          '';
+        };
+
+        lua = pkgs.mkShell {
+          name = "lua-shell";
+          inputsFrom = [ self.devShells.x86_64-linux.nvim ];
+          packages = with pkgs; [
+            luajit
+          ];
+          shellHook = ''
+            fish
+          '';
         };
       };
     };
