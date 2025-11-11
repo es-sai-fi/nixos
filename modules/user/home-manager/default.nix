@@ -24,11 +24,6 @@
           #swaybg
           statix
           nixfmt
-          rustc
-          cargo
-          python3
-          nodejs
-          go
           lm_sensors
           zip
           unzip
