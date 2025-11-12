@@ -14,7 +14,7 @@
     enableSystemMonitoring = true;
     enableClipboard = true;
     enableCalendarEvents = true;
-    enableSystemSound = true;
+    systemd.enable = true;
     default.settings = {
       theme = "dark";
       showDock = true;
