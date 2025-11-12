@@ -31,7 +31,6 @@
           obs-studio
           bleachbit
           discord
-          obsidian
           xwayland-satellite
           obs-cmd
           nautilus

@@ -9,8 +9,8 @@
     ./yazi.nix
     ./zellij.nix
     ./neovim-nightly.nix
-    ./niri.nix
     ./librewolf.nix
+    ./niri.nix
     ./dankMaterialShell.nix
   ];
 
