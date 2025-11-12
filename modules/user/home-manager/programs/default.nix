@@ -1,7 +1,5 @@
 {
   imports = [
-    #./fuzzel.nix
-    #./waybar.nix
     ./fish.nix
     ./gh.nix
     ./alacritty.nix
