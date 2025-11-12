@@ -31,8 +31,8 @@
           obs-studio
           bleachbit
           discord
-          xwayland-satellite
           obs-cmd
+          xwayland-satellite
           nautilus
           xdg-utils
           minizinc
