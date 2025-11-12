@@ -1,9 +1,12 @@
 { pkgs, ... }:
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    download-buffer-size = 134217728;
+  };
 
   time.timeZone = "America/Bogota";
 
