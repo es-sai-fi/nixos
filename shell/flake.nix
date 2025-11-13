@@ -42,7 +42,6 @@
 
         python = pkgs.mkShell {
           name = "python-shell";
-          inputsFrom = [ self.devShells.x86_64-linux.nvim ];
           packages = with pkgs; [
             python3
           ];
@@ -53,7 +52,6 @@
 
         lua = pkgs.mkShell {
           name = "lua-shell";
-          inputsFrom = [ self.devShells.x86_64-linux.nvim ];
           packages = with pkgs; [
             luajit
           ];

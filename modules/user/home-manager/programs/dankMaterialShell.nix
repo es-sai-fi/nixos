@@ -10,11 +10,11 @@
     niri = {
       enableSpawn = true;
     };
-    enableSystemd = true;
+    systemd.enable = true;
     enableSystemMonitoring = true;
     enableClipboard = true;
     enableCalendarEvents = true;
-    systemd.enable = true;
+    enableSystemSound = true;
     default.settings = {
       theme = "dark";
       showDock = true;
