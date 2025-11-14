@@ -10,7 +10,6 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    showDerivationWarnings = [ "maintainerless" ];
   };
 
   time.timeZone = "America/Bogota";

@@ -15,10 +15,7 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    neovim-flake.url = "github:es-sai-fi/neovim-flake";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
@@ -49,7 +46,6 @@
           ./modules
           {
             nixpkgs.overlays = [
-              inputs.neovim-nightly-overlay.overlays.default
               inputs.niri.overlays.niri
             ];
           }

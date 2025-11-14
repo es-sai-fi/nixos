@@ -6,7 +6,6 @@
     ./git.nix
     ./yazi.nix
     ./zellij.nix
-    ./neovim-nightly.nix
     ./librewolf.nix
     ./niri.nix
     ./dankMaterialShell.nix
