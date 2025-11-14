@@ -1,6 +1,11 @@
 {
   home-manager.users.es-sai-fi =
-    { pkgs, config, ... }:
+    {
+      inputs,
+      pkgs,
+      config,
+      ...
+    }:
     {
       imports = [
         ./programs
@@ -36,6 +41,7 @@
           nautilus
           xdg-utils
           minizinc
+          inputs.neovim.packages.${system}.default
         ];
         sessionVariables = {
           NIXOS_OZONE_WL = "1";
