@@ -8,6 +8,11 @@
     download-buffer-size = 134217728;
   };
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    showDerivationWarnings = [ "maintainerless" ];
+  };
+
   time.timeZone = "America/Bogota";
 
   i18n = {
@@ -26,8 +31,6 @@
   };
 
   console.keyMap = "es";
-
-  nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
