@@ -23,5 +23,6 @@
     jq.enable = true;
     htop.enable = true;
     gcc.enable = true;
+    mnw.enable = true;
   };
 }
