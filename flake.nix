@@ -15,9 +15,7 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-flake = {
-      url = "github:es-sai-fi/neovim-flake";
-    };
+    neovim-flake.url = "github:es-sai-fi/neovim-flake";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
@@ -59,7 +57,6 @@
           {
             imports = [
               inputs.home-manager.nixosModules.default
-              inputs.neovim-flake.homeManagerModules.default
             ];
             home-manager = {
               useGlobalPkgs = true;
