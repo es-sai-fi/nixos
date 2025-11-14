@@ -30,16 +30,22 @@
         body = "systemctl reboot";
       };
       update = {
-        body = "sudo nixos-rebuild switch --flake ~/nixfiles/";
+        body = ''
+          nix flake update ~/nixfiles
+          sudo nixos-rebuild switch --flake ~/nixfiles
+        '';
+      };
+      rebuild = {
+        body = ''
+          sudo nixos-rebuild switch --flake ~/nixfiles
+        '';
       };
       clean = {
         body = ''
           sudo nix-collect-garbage -d
-          sudo nix-store --gc
-          sudo nix-store --optimise
+          sudo nix store optimise
           nix-collect-garbage -d
-          nix-store --gc
-          nix-store --optimise
+          nix store optimise
         '';
       };
       generations = {

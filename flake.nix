@@ -15,7 +15,7 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-flake.url = "github:es-sai-fi/neovim-flake";
+    neovim-flake.url = "github:es-sai-fi/neovim-flake/events";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };

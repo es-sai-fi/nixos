@@ -14,6 +14,8 @@
           packages = with pkgs; [
             rustc
             cargo
+            clippy
+            rust-analyzer
           ];
           shellHook = ''
             fish
@@ -24,6 +26,8 @@
           name = "node-shell";
           packages = with pkgs; [
             nodejs
+            vtsls
+            biome
           ];
           shellHook = ''
             fish
@@ -34,6 +38,7 @@
           name = "go-shell";
           packages = with pkgs; [
             go
+            gopls
           ];
           shellHook = ''
             fish
@@ -44,6 +49,8 @@
           name = "python-shell";
           packages = with pkgs; [
             python3
+            basedpyright
+            ruff
           ];
           shellHook = ''
             fish
@@ -54,6 +61,8 @@
           name = "lua-shell";
           packages = with pkgs; [
             luajit
+            lua-language-server
+            stylua
           ];
           shellHook = ''
             fish
