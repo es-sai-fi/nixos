@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./aagl.nix
@@ -9,6 +9,7 @@
     git
     wget
     curl
+    inputs.neovim-flake.packages.x86_64-linux.default
   ];
 
   programs = {

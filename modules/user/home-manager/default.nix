@@ -1,6 +1,10 @@
 {
   home-manager.users.es-sai-fi =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      ...
+    }:
     {
       imports = [
         ./programs
