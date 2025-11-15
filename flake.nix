@@ -15,7 +15,7 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-flake.url = "github:es-sai-fi/neovim-flake/events";
+    neovim-flake.url = "github:es-sai-fi/neovim-flake";
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
@@ -32,34 +32,36 @@
     };
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, ... }:
-    {
-      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    ...
+  }: {
+    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
 
-        specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
 
-        modules = [
-          ./configuration.nix
-          ./hardware-configuration.nix
-          ./modules
-          {
-            nixpkgs.overlays = [
-              inputs.niri.overlays.niri
-            ];
-          }
-          {
-            imports = [
-              inputs.home-manager.nixosModules.default
-            ];
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-            };
-          }
-        ];
-      };
+      modules = [
+        ./configuration.nix
+        ./hardware-configuration.nix
+        ./modules
+        {
+          nixpkgs.overlays = [
+            inputs.niri.overlays.niri
+          ];
+        }
+        {
+          imports = [
+            inputs.home-manager.nixosModules.default
+          ];
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs;};
+          };
+        }
+      ];
     };
+  };
 }
