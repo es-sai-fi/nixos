@@ -31,13 +31,13 @@
       };
       update = {
         body = ''
-          nix flake update --flake ~/nixfiles
-          sudo nixos-rebuild switch --flake ~/nixfiles
+          nix flake update --flake ~/nixfiles/flake.nix
+          sudo nixos-rebuild switch --flake ~/nixfiles/flake.nix
         '';
       };
       rebuild = {
         body = ''
-          sudo nixos-rebuild switch --flake ~/nixfiles
+          sudo nixos-rebuild switch --flake ~/nixfiles/flake.nix
         '';
       };
       clean = {
