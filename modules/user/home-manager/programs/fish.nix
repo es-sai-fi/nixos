@@ -31,15 +31,16 @@
       };
       update = {
         body = ''
-          nix flake update --flake ~/nixfiles/flake.nix
-          sudo nixos-rebuild switch --flake ~/nixfiles/flake.nix
+          nix flake update --flake ~/nixfiles/
+          sudo nixos-rebuild switch --flake ~/nixfiles/
           git add flake.lock
           git commit -m "chore: nix flake update"
+          git push
         '';
       };
       rebuild = {
         body = ''
-          sudo nixos-rebuild switch --flake ~/nixfiles/flake.nix
+          sudo nixos-rebuild switch --flake ~/nixfiles/
         '';
       };
       clean = {
