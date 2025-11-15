@@ -33,6 +33,8 @@
         body = ''
           nix flake update --flake ~/nixfiles/flake.nix
           sudo nixos-rebuild switch --flake ~/nixfiles/flake.nix
+          git add flake.lock
+          git commit -m "chore: nix flake update"
         '';
       };
       rebuild = {
