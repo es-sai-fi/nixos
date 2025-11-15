@@ -31,7 +31,7 @@
       };
       update = {
         body = ''
-          nix flake update ~/nixfiles
+          nix flake update --flake ~/nixfiles
           sudo nixos-rebuild switch --flake ~/nixfiles
         '';
       };
