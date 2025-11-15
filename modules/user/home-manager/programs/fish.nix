@@ -62,11 +62,10 @@
       dev = {
         body = ''
           if test (count $argv) -eq 0
-              echo "Usage: dev <flake-target> (e.g. #rust, #python)"
-              return 1
+            set target default
+          else
+            set target $argv[1]
           end
-
-          set target $argv[1]
 
           nix develop ~/nixfiles/shell#$target
         '';
@@ -80,7 +79,7 @@
           if test (count $argv) -ge 1
             set port $argv[1]
           end
-              
+
           podman run \
             --userns=keep-id \
             -it \

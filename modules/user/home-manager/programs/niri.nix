@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }:
 {
-  imports = [ inputs.niri.homeModules.niri ];
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [inputs.niri.homeModules.niri];
 
   programs.niri = {
     enable = true;
@@ -83,11 +86,11 @@
            Mod+Shift+Escape { show-hotkey-overlay; }
 
            Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
-           Mod+E hotkey-overlay-title="Open Editor" {spawn "alacritty" "--title" "Nvim" "-e" "nvim"; }
+           Mod+E hotkey-overlay-title="Open Editor" {spawn "alacritty" "--title" "Nvim" "-e" "dev" "-c" "nvim"; }
            Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
            Mod+Y hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }
 
-           Super+Shift+F1 hotkey-overlay-title="Start recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "start"; } 
+           Super+Shift+F1 hotkey-overlay-title="Start recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "start"; }
            Super+Shift+F2 hotkey-overlay-title="Stop recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "stop"; }
            Super+Shift+F3 hotkey-overlay-title="Pause recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "pause"; }
            Super+Shift+F4 hotkey-overlay-title="Resume recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "resume"; }
@@ -229,28 +232,28 @@
            Mod+Shift+P { power-off-monitors; }
 
            // DMS Binds
-           Mod+Space hotkey-overlay-title="Application Launcher" { 
-             spawn "dms" "ipc" "call" "spotlight" "toggle"; 
+           Mod+Space hotkey-overlay-title="Application Launcher" {
+             spawn "dms" "ipc" "call" "spotlight" "toggle";
            }
 
-           Mod+Escape hotkey-overlay-title="Settings" { 
-               spawn "dms" "ipc" "call" "settings" "toggle"; 
+           Mod+Escape hotkey-overlay-title="Settings" {
+               spawn "dms" "ipc" "call" "settings" "toggle";
            }
 
            Mod+N hotkey-overlay-title="Notification Center" {
-               spawn "dms" "ipc" "call" "notifications" "toggle"; 
+               spawn "dms" "ipc" "call" "notifications" "toggle";
            }
 
-           Mod+M hotkey-overlay-title="Task Manager" { 
-               spawn "dms" "ipc" "call" "processlist" "toggle"; 
+           Mod+M hotkey-overlay-title="Task Manager" {
+               spawn "dms" "ipc" "call" "processlist" "toggle";
            }
 
            Mod+Shift+N hotkey-overlay-title="Notepad" {
-             spawn "dms" "ipc" "call" "notepad" "toggle";  
+             spawn "dms" "ipc" "call" "notepad" "toggle";
            }
-           
-           Mod+Alt+L hotkey-overlay-title="Lock Screen" { 
-               spawn "dms" "ipc" "call" "lock" "lock"; 
+
+           Mod+Alt+L hotkey-overlay-title="Lock Screen" {
+               spawn "dms" "ipc" "call" "lock" "lock";
            }
 
            XF86AudioRaiseVolume allow-when-locked=true {
@@ -265,13 +268,13 @@
            XF86AudioMicMute allow-when-locked=true {
                spawn "dms" "ipc" "call" "audio" "micmute";
            }
-           
+
            XF86MonBrightnessUp allow-when-locked=true {
              spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
            }
            XF86MonBrightnessDown allow-when-locked=true {
              spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
-           } 
+           }
        }
 
     '';

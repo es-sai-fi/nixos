@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./aagl.nix
   ];
@@ -12,7 +11,6 @@
   ];
 
   programs = {
-    nix-ld.enable = true;
     dconf.enable = true;
   };
 }
