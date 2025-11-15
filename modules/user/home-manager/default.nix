@@ -21,8 +21,6 @@
 
       home = {
         packages = with pkgs; [
-          statix
-          nixfmt
           lm_sensors
           zip
           unzip
@@ -36,7 +34,7 @@
           nautilus
           xdg-utils
           minizinc
-	  inputs.neovim-flake.packages.x86_64-linux.default
+	        inputs.neovim-flake.packages.x86_64-linux.default
         ];
         sessionVariables = {
           NIXOS_OZONE_WL = "1";
