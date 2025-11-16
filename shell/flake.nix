@@ -9,58 +9,31 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     devShells.x86_64-linux = {
-      default = pkgs.mkShellNoCC {
-        name = "default-shell";
-        packages = with pkgs; [
-          clippy
-          rust-analyzer
-          typescript-language-server
-          biome
-          gofumpt
-          gopls
-          basedpyright
-          ruff
-          lua-language-server
-          stylua
-        ];
-        shellHook = ''
-          fish
-        '';
-      };
-
       rust = pkgs.mkShellNoCC {
         name = "rust-shell";
         packages = with pkgs; [
           rustc
           cargo
-          clippy
-          rust-analyzer
         ];
         shellHook = ''
           fish
         '';
       };
 
-      node =
-        pkgs.mkShellNoCC
-        {
-          name = "node-shell";
-          packages = with pkgs; [
-            nodejs
-            typescript-language-server
-            biome
-          ];
-          shellHook = ''
-            fish
-          '';
-        };
+      node = pkgs.mkShellNoCC {
+        name = "node-shell";
+        packages = with pkgs; [
+          nodejs
+        ];
+        shellHook = ''
+          fish
+        '';
+      };
 
       go = pkgs.mkShellNoCC {
         name = "go-shell";
         packages = with pkgs; [
           go
-          gopls
-          gofumpt
         ];
         shellHook = ''
           fish
@@ -71,8 +44,6 @@
         name = "python-shell";
         packages = with pkgs; [
           python3
-          basedpyright
-          ruff
         ];
         shellHook = ''
           fish
@@ -83,8 +54,6 @@
         name = "lua-shell";
         packages = with pkgs; [
           luajit
-          lua-language-server
-          stylua
         ];
         shellHook = ''
           fish
