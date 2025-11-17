@@ -9,7 +9,6 @@
     ./librewolf.nix
     ./niri.nix
     ./dankMaterialShell.nix
-    ./neovim.nix
   ];
 
   programs = {

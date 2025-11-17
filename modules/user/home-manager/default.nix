@@ -37,10 +37,12 @@
         nautilus
         xdg-utils
         minizinc
+        inputs.neovim-flake.packages.x86_64-linux.default;
       ];
       sessionVariables = {
         NIXOS_OZONE_WL = "1";
         REGISTRY_AUTH_FILE = "${config.home.homeDirectory}/.config/containers/auth.json";
+        EDITOR = "nvim"; 
       };
       stateVersion = "25.05";
       shell.enableFishIntegration = true;
