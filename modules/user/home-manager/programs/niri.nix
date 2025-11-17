@@ -86,9 +86,9 @@
            Mod+Shift+Escape { show-hotkey-overlay; }
 
            Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
-           Mod+E hotkey-overlay-title="Open Editor" { spawn "alacritty" "--title" "Nvim" "-e" "nvim"; }
+           Mod+E hotkey-overlay-title="Open Editor" { spawn "alacritty" "-e" "fish" "-c" "nvim"; }
            Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
-           Mod+Y hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "yazi"; }
+           Mod+Y hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "fish" "-c" "yazi"; }
 
            Super+Shift+F1 hotkey-overlay-title="Start recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "start"; }
            Super+Shift+F2 hotkey-overlay-title="Stop recording" { spawn "alacritty" "-e" "obs-cmd" "recording" "stop"; }

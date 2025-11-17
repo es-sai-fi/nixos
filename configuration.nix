@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -31,7 +30,7 @@
 
   console.keyMap = "es";
 
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [nerd-fonts.jetbrains-mono];
 
   xdg.portal = {
     enable = true;
@@ -45,14 +44,6 @@
           "gtk"
         ];
       };
-    };
-  };
-
-  environment = {
-    variables = {
-      FZF_DEFAULT_COMMAND = "fd --hidden --strip-cwd-prefix --exclude .git";
-      FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND";
-      FZF_ALT_C_COMMAND = "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
     };
   };
 

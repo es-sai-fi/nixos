@@ -42,7 +42,10 @@
       sessionVariables = {
         NIXOS_OZONE_WL = "1";
         REGISTRY_AUTH_FILE = "${config.home.homeDirectory}/.config/containers/auth.json";
-        EDITOR = "nvim"; 
+        EDITOR = "nvim";
+        FZF_DEFAULT_COMMAND = "fd --hidden --strip-cwd-prefix --exclude .git";
+        FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND";
+        FZF_ALT_C_COMMAND = "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
       };
       stateVersion = "25.05";
       shell.enableFishIntegration = true;
