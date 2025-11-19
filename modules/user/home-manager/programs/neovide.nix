@@ -1,12 +1,12 @@
-{pkgs, ...}: {
+{inputs, ...}: {
   programs.neovide = {
     enable = true;
     settings = {
       fork = false;
-      frame = "full";
+      frame = "none";
       idle = true;
       maximized = false;
-      neovim-bin = "${pkgs.neovim}/bin/nvim";
+      neovim-bin = "${inputs.neovim-flake.packages.x86_64-linux.default}/bin/nvim";
       no-multigrid = false;
       srgb = false;
       tabs = true;
