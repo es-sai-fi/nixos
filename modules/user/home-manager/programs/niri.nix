@@ -86,7 +86,7 @@
            Mod+Shift+Escape { show-hotkey-overlay; }
 
            Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
-           Mod+E hotkey-overlay-title="Open Editor" { spawn "alacritty" "-e" "fish" "-c" "nvim"; }
+           Mod+E hotkey-overlay-title="Open Editor" { spawn "neovide"; }
            Mod+B hotkey-overlay-title="Open Browser" { spawn "librewolf"; }
            Mod+Y hotkey-overlay-title="Open Yazi" { spawn "alacritty" "-e" "fish" "-c" "yazi"; }
 
