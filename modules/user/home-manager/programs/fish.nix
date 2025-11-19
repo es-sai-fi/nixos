@@ -10,6 +10,7 @@
       find = "fd";
       cat = "bat";
       grep = "rg";
+      nvim = "neovide";
     };
     functions = {
       _fzf_compgen_path = {

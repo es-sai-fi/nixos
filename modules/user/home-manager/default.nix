@@ -37,7 +37,6 @@
         nautilus
         xdg-utils
         minizinc
-        inputs.neovim-flake.packages.x86_64-linux.default
       ];
       sessionVariables = {
         NIXOS_OZONE_WL = "1";
