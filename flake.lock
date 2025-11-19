@@ -145,11 +145,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1763511602,
-        "narHash": "sha256-+/ypclqNQ3FqEzpyJeiHrMykxSqq01o2bUQqGreNHO8=",
+        "lastModified": 1763511865,
+        "narHash": "sha256-0My9mq66G37O14xSDFvGTkH1ZSOgYOIGzMZRBX0nO9M=",
         "owner": "es-sai-fi",
         "repo": "neovim-flake",
-        "rev": "7543174d8dca76c607d095c9cf1c452f7f614a5a",
+        "rev": "5f58d5f469e1189170d457fcc2f6580612fff7c3",
         "type": "github"
       },
       "original": {
