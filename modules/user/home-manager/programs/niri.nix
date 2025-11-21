@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
   imports = [inputs.niri.homeModules.niri];
 
   programs.niri = {
