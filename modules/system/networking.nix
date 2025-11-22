@@ -5,11 +5,8 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [
-        80
-        443
-      ];
-      allowedUDPPorts = [ ];
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
       allowPing = false;
     };
   };
