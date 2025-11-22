@@ -22,12 +22,12 @@
             layout = "us,es";
             options = "grp:alt_shift_toggle";
           };
+          track-layout = "window";
         };
         mouse = {
           accel-speed = -0.2;
           accel-profile = "flat";
         };
-        track-layout = "window";
       };
 
       outputs = {
