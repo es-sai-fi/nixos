@@ -32,21 +32,6 @@
 
   fonts.packages = with pkgs; [nerd-fonts.jetbrains-mono];
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = [
-          "gtk"
-        ];
-      };
-    };
-  };
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

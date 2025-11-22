@@ -43,14 +43,12 @@
       specialArgs = {inherit inputs;};
 
       modules = [
+        {
+          nixpkgs.overlays = [inputs.niri.overlays.niri];
+        }
         ./configuration.nix
         ./hardware-configuration.nix
         ./modules
-        {
-          nixpkgs.overlays = [
-            inputs.niri.overlays.niri
-          ];
-        }
         {
           imports = [
             inputs.home-manager.nixosModules.default

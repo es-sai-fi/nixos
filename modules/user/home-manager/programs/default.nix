@@ -7,7 +7,6 @@
     ./yazi.nix
     ./zellij.nix
     ./librewolf.nix
-    ./niri.nix
     ./dankMaterialShell.nix
     ./neovide.nix
   ];

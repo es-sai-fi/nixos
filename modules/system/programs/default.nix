@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./niri
     ./aagl.nix
   ];
 
