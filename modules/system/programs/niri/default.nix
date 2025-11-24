@@ -3,16 +3,9 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.niri.nixosModules.niri];
+  imports = [inputs.niri-flake.nixosModules.niri];
 
-  nix.settings = {
-    extra-substituters = [
-      "https://niri.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-    ];
-  };
+  nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
   xdg.portal = {
     enable = true;

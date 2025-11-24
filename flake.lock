@@ -197,7 +197,7 @@
         "type": "github"
       }
     },
-    "niri": {
+    "niri-flake": {
       "inputs": {
         "niri-stable": "niri-stable",
         "niri-unstable": "niri-unstable",
@@ -342,7 +342,7 @@
         "dgop": "dgop",
         "home-manager": "home-manager",
         "neovim-flake": "neovim-flake",
-        "niri": "niri",
+        "niri-flake": "niri-flake",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_3"
       }

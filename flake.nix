@@ -11,7 +11,7 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
+    niri-flake = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -43,9 +43,6 @@
       specialArgs = {inherit inputs;};
 
       modules = [
-        {
-          nixpkgs.overlays = [inputs.niri.overlays.niri];
-        }
         ./configuration.nix
         ./hardware-configuration.nix
         ./modules
