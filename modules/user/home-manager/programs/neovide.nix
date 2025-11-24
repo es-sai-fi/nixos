@@ -2,7 +2,7 @@
   programs.neovide = {
     enable = true;
     settings = {
-      fork = true;
+      fork = false;
       frame = "none";
       idle = true;
       maximized = false;
