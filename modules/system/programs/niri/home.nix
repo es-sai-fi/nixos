@@ -35,7 +35,7 @@
           mode = {
             height = 1080;
             width = 1920;
-            refresh = 240.0;
+            refresh = 200.0;
           };
           scale = 1;
         };
@@ -74,7 +74,7 @@
         {
           matches = [
             {
-              app-id = "Neovide";
+              app-id = "neovide";
             }
           ];
           open-maximized = true;
