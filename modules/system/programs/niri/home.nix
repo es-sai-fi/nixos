@@ -31,13 +31,12 @@
       };
 
       outputs."HDMI-A-1" = {
-          mode = {
-            height = 1080;
-            width = 1920;
-            refresh = 200.0;
-          };
-          scale = 1;
+        mode = {
+          height = 1080;
+          width = 1920;
+          refresh = 200.0;
         };
+        scale = 1;
       };
 
       layout = {
