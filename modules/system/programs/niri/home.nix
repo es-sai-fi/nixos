@@ -30,8 +30,7 @@
         };
       };
 
-      outputs = {
-        "HDMI-A-1" = {
+      outputs."HDMI-A-1" = {
           mode = {
             height = 1080;
             width = 1920;
