@@ -31,7 +31,7 @@
       };
 
       outputs = {
-        "eDP-1" = {
+        "HDMI-A-1" = {
           mode = {
             height = 1080;
             width = 1920;
