@@ -34,7 +34,7 @@
         mode = {
           height = 1080;
           width = 1920;
-          refresh = 200.0;
+          refresh = 199.997;
         };
         scale = 1;
       };
