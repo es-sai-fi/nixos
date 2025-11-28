@@ -2,29 +2,52 @@
   description = "System flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
+      ref = "master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
+      type = "github";
+      owner = "ezKEa";
+      repo = "aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      type = "github";
+      owner = "sodiboo";
+      repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-flake.url = "github:es-sai-fi/neovim-flake";
+    neovim-flake = {
+      type = "github";
+      owner = "es-sai-fi";
+      repo = "neovim-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=latest";
+      type = "github";
+      owner = "gmodena";
+      repo = "nix-flatpak";
     };
     dgop = {
-      url = "github:AvengeMedia/dgop";
+      type = "github";
+      owner = "AvengeMedia";
+      repo = "dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
+      type = "github";
+      owner = "AvengeMedia";
+      repo = "DankMaterialShell";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         dgop.follows = "dgop";
@@ -50,6 +73,7 @@
           imports = [
             inputs.home-manager.nixosModules.default
           ];
+
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
