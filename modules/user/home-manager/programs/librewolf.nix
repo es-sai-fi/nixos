@@ -47,6 +47,14 @@
           private_browsing = true;
         };
       };
+      Handlers = {
+        schemes = {
+          roblox-player = {
+            action = "useHelperApp";
+            ask = true;
+          };
+        };
+      };
     };
   };
 }
