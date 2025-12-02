@@ -1,13 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  nixpkgs.overlays = [inputs.helix.overlays.default];
-
+{inputs, ...}: {
   programs.helix = {
     enable = true;
-    package = pkgs.helix;
+    package = inputs.helix.packages.x86_64-linux.helix;
     defaultEditor = true;
     settings = {
       editor = {

@@ -56,6 +56,7 @@
       type = "github";
       owner = "helix-editor";
       repo = "helix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
