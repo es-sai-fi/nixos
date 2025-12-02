@@ -4,14 +4,6 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
-    shellAliases = {
-      ls = "eza";
-      cd = "z";
-      find = "fd";
-      cat = "bat";
-      grep = "rg";
-      nvim = "neovide";
-    };
     functions = {
       _fzf_compgen_path = {
         body = ''
@@ -23,12 +15,6 @@
         body = ''
           fd --type d --hidden --exclude .git . $argv[1]
         '';
-      };
-      poweroff = {
-        body = "systemctl poweroff";
-      };
-      reboot = {
-        body = "systemctl reboot";
       };
       update = {
         body = ''
@@ -56,28 +42,6 @@
           nix-collect-garbage -d
           nix store optimise
         '';
-      };
-      generations = {
-        body = ''
-          echo "System-wide genations:"
-          sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
-          echo "User generations:"
-          nix-env --list-generations
-        '';
-      };
-      dev = {
-        body = ''
-          if test (count $argv) -eq 0
-            set target default
-          else
-            set target $argv[1]
-          end
-
-          nix develop ~/nixfiles/shell#$target
-        '';
-      };
-      roblox = {
-        body = "flatpak run org.vinegarhq.Sober";
       };
       dev_container = {
         body = ''

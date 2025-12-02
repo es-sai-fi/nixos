@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./home-manager
@@ -12,6 +11,6 @@
       "wheel"
       "podman"
     ];
-    packages = with pkgs; [ ];
+    packages = [];
   };
 }

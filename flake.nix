@@ -52,6 +52,11 @@
         dgop.follows = "dgop";
       };
     };
+    helix = {
+      type = "github";
+      owner = "helix-editor";
+      repo = "helix";
+    };
   };
 
   outputs = inputs @ {

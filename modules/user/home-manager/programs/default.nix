@@ -9,6 +9,7 @@
     ./librewolf.nix
     ./dankMaterialShell.nix
     ./neovide.nix
+    ./helix.nix
   ];
 
   programs = {
@@ -21,6 +22,5 @@
     fd.enable = true;
     jq.enable = true;
     htop.enable = true;
-    gcc.enable = true;
   };
 }
