@@ -1,4 +1,6 @@
 {inputs, ...}: {
+  nixpkgs.overlays = [inputs.helix.overlays.helix];
+
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.x86_64-linux.helix;
