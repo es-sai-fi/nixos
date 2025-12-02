@@ -4,9 +4,14 @@
   inputs = {
     nixpkgs = {
       type = "github";
-      owner = "nixos";
+      owner = "NixOS";
       repo = "nixpkgs";
       ref = "nixos-unstable";
+    };
+    nixos-hardware = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixos-hardware";
     };
     home-manager = {
       type = "github";
@@ -68,6 +73,7 @@
         ./configuration.nix
         ./hardware-configuration.nix
         ./modules
+        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
         {
           imports = [
             inputs.home-manager.nixosModules.default
