@@ -5,8 +5,6 @@
 }: {
   imports = [inputs.niri-flake.nixosModules.niri];
 
-  nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
-
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;

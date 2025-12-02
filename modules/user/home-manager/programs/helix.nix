@@ -1,11 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  nixpkgs.overlays = [inputs.helix.overlays.helix];
-
-  home-manager.users.es-sai-fi.programs.helix = {
+{pkgs, ...}: {
+  programs.helix = {
     enable = true;
     package = pkgs.helix;
     defaultEditor = true;

@@ -71,6 +71,12 @@
       specialArgs = {inherit inputs;};
 
       modules = [
+        {
+          nixpkgs.overlays = [
+            inputs.helix.overlays.helix
+            inputs.niri-flake.overlays.niri
+          ];
+        }
         ./configuration.nix
         ./hardware-configuration.nix
         ./modules
