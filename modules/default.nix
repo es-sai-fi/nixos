@@ -1,6 +1,8 @@
 {
   imports = [
     ./system
-    ./user
+    ./programs
+    ./services
+    ./user.nix
   ];
 }
