@@ -1,12 +1,13 @@
-{inputs, ...}: {
-  nixConfig = {
-    extra-substituters = ["https://helix.cachix.org"];
-    extra-trusted-public-keys = ["helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="];
-  };
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  nixpkgs.overlays = [inputs.helix.overlays.helix];
 
-  programs.helix = {
+  home-manager.users.es-sai-fi.programs.helix = {
     enable = true;
-    package = inputs.helix.packages.x86_64-linux.helix;
+    package = pkgs.helix;
     defaultEditor = true;
     settings = {
       editor = {
