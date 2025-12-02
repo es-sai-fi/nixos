@@ -13,5 +13,6 @@
 
   programs = {
     dconf.enable = true;
+    zoxide.enable = true;
   };
 }
