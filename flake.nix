@@ -8,11 +8,18 @@
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
-    home-manager = {
+    hjem = {
       type = "github";
-      owner = "nix-community";
-      repo = "home-manager";
+      owner = "feel-co";
+      repo = "hjem";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hjem-rum = {
+      type = "github";
+      owner = "snugnug";
+      repo = "hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
     };
     aagl = {
       type = "github";
@@ -52,6 +59,12 @@
         dgop.follows = "dgop";
       };
     };
+    helix = {
+      type = "github";
+      owner = "helix-editor";
+      repo = "helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -68,17 +81,6 @@
         ./configuration.nix
         ./hardware-configuration.nix
         ./modules
-        {
-          imports = [
-            inputs.home-manager.nixosModules.default
-          ];
-
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-          };
-        }
       ];
     };
   };

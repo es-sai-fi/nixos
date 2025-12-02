@@ -1,0 +1,72 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,es"
+            model ""
+            rules ""
+            variant ""
+            options "grp:alt_shift_toggle"
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "window"
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+    mouse {
+        accel-speed -0.200000
+        accel-profile "flat"
+    }
+}
+output "HDMI-A-1" {
+    scale 1
+    transform "normal"
+    mode "1920x1080@199.997000"
+}
+screenshot-path "~/Pictures/screenshots/Niri %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+layout {
+    gaps 4
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+    focus-ring {
+        width 2
+        urgent-color "#ffb4ab"
+        active-color "#b0c6ff"
+        inactive-color "#8f9099"
+    }
+    border { off; }
+    default-column-width { proportion 0.500000; }
+    preset-column-widths {
+        proportion 0.250000
+        proportion 0.500000
+        proportion 0.750000
+        proportion 1.000000
+    }
+    center-focused-column "never"
+}
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+}
+hotkey-overlay { skip-at-startup; }
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    open-floating true
+}
+window-rule {
+    match app-id="neovide"
+    open-maximized true
+}
+window-rule {
+    draw-border-with-background false
+    clip-to-geometry true
+    tiled-state true
+}
+gestures { hot-corners { off; }; }
