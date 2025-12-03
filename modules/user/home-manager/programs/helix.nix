@@ -4,20 +4,22 @@
     package = pkgs.helix;
     defaultEditor = true;
     settings = {
+      theme = "gruvbox_material_dark_soft";
       editor = {
         line-number = "relative";
         mouse = true;
-        cursorline = true;
+        middle-click-paste = false;
         color-modes = true;
         true-color = true;
         auto-pairs = true;
         scrolloff = 10;
         bufferline = "multiple";
         end-of-line-diagnostics = "hint";
-        auto-format = true;
-        cursorcolumn = true;
-        shell = ["fish" "-c"];
         clipboard-provider = "wayland";
+        lsp.display-messages = true;
+        auto-format = true;
+        rulers = [80];
+        shell = ["fish" "-c"];
         cursor-shape = {
           insert = "bar";
           normal = "block";
@@ -28,14 +30,17 @@
         };
         indent-guides = {
           render = true;
+          raimbow = "normal";
         };
+        rainbow-brackets = true;
         inline-diagnostics = {
           cursor-line = "hint";
         };
+        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         statusline = {
-          left = ["mode" "spinner"];
-          center = ["file-name" "version-control"];
-          right = ["diagnostics" "position" "file-type"];
+          left = ["mode" "selections" "spinner" "file-name" "total-line-numbers"];
+          center = [];
+          right = ["diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position"];
           separator = "│";
           mode = {
             normal = "NORMAL";
