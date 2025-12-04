@@ -5,6 +5,10 @@
 }: {
   imports = [inputs.niri-flake.nixosModules.niri];
 
+  environment.systemPackages = with pkgs; [
+    nautilus
+  ];
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;

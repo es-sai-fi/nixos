@@ -33,7 +33,6 @@
         bleachbit
         discord
         obs-cmd
-        nautilus
         xdg-utils
         minizinc
       ];
