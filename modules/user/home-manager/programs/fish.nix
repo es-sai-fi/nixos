@@ -4,6 +4,10 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
+    shellAliases = {
+      cd = "z";
+      cat = "bat";
+    };
     functions = {
       _fzf_compgen_path = {
         body = ''
