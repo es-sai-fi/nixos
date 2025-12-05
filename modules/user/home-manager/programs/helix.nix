@@ -27,16 +27,13 @@
           command = "statix";
           args = ["check"];
         };
+        gopls.config.gofumpt = true;
       };
       language = [
         {
-          name = "go";
-          formatter = "gofumpt";
-        }
-        {
           name = "nix";
           language-servers = ["nil" "statix"];
-          formatter = "alejandra";
+          formatter.command = "alejandra";
         }
         {
           name = "python";
@@ -45,7 +42,7 @@
       ];
     };
     settings = {
-      theme = "gruvbox_material_dark_soft";
+      theme = "gruvbox_dark_soft";
       editor = {
         line-number = "relative";
         mouse = true;
