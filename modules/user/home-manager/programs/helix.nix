@@ -1,8 +1,49 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    package = pkgs.helix;
     defaultEditor = true;
+    package = pkgs.helix;
+    extraPackages = with pkgs; [
+      alejandra
+      nil
+      statix
+      lua-language-server
+      stylua
+      basedpyright
+      ruff
+      typescript-language-server
+      biome
+      rust-analyzer
+      clippy
+      rustfmt
+      golangci-lint
+      gopls
+      gofumpt
+      clang-tools
+    ];
+    languages = {
+      language-server = {
+        statix = {
+          command = "statix";
+          args = ["check"];
+        };
+      };
+      language = [
+        {
+          name = "go";
+          formatter = "gofumpt";
+        }
+        {
+          name = "nix";
+          language-servers = ["nil" "statix"];
+          formatter = "alejandra";
+        }
+        {
+          name = "python";
+          language-servers = ["basedpyright" "ruff"];
+        }
+      ];
+    };
     settings = {
       theme = "gruvbox_material_dark_soft";
       editor = {
