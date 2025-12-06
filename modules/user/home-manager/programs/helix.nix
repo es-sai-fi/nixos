@@ -42,7 +42,6 @@
         {
           name = "nix";
           language-servers = ["nil" "statix"];
-          auto-format = true;
           formatter = {command = "alejandra";};
         }
         {
@@ -89,7 +88,7 @@
         {
           name = "lua";
           auto-format = true;
-          formatter = {command="stylua";};
+          formatter = {command = "stylua";};
         }
       ];
     };
