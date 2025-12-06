@@ -1,9 +1,10 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
+    useDefaultEditor = true;
     package = pkgs.helix;
     extraPackages = with pkgs; [
-      # Debuggers
+      # Debugger
       lldb
 
       # Nix
