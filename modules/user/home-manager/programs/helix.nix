@@ -173,7 +173,6 @@
           left = ["mode" "version-control" "file-modification-indicator"];
           center = ["file-name"];
           right = ["diagnostics" "file-encoding" "file-type" "position-percentage" "position"];
-          separator = " │ ";
           mode = {
             normal = "NOR";
             insert = "INS";
