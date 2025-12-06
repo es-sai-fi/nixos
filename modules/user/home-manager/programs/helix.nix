@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    defaultEditor = true;
     package = pkgs.helix;
     extraPackages = with pkgs; [
+      lldb
       alejandra
       nil
       statix
@@ -27,17 +27,69 @@
           command = "statix";
           args = ["check"];
         };
-        gopls.config.gofumpt = true;
       };
       language = [
         {
+          name = "rust";
+          auto-format = true;
+          formatter = {command = "rustfmt";};
+        }
+        {
+          name = "go";
+          auto-format = true;
+          formatter = {command = "gofumpt";};
+        }
+        {
           name = "nix";
           language-servers = ["nil" "statix"];
-          formatter.command = "alejandra";
+          auto-format = true;
+          formatter = {command = "alejandra";};
         }
         {
           name = "python";
           language-servers = ["basedpyright" "ruff"];
+          auto-format = true;
+          formatter = {
+            command = "ruff";
+            args = ["format"];
+          };
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format"];
+          };
+        }
+        {
+          name = "typescript";
+          auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format"];
+          };
+        }
+        {
+          name = "json";
+          auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format"];
+          };
+        }
+        {
+          name = "jsonc";
+          auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format"];
+          };
+        }
+        {
+          name = "lua";
+          auto-format = true;
+          formatter = {command="stylua";};
         }
       ];
     };
@@ -91,13 +143,13 @@
         auto-pairs = false;
         auto-format = true;
         scrolloff = 10;
-        bufferline = {
-          show = "multiple";
-          context = "minimal";
-        };
+        #bufferline = {
+        #  show = "multiple";
+        #  context = "minimal";
+        #};
         end-of-line-diagnostics = "hint";
         clipboard-provider = "wayland";
-        rulers = [80 120];
+        rulers = [80];
         shell = ["fish" "-c"];
         cursor-shape = {
           insert = "bar";
@@ -108,9 +160,7 @@
           hidden = false;
         };
         indent-guides = {
-          character = "╎";
           render = true;
-          raimbow = "normal";
         };
         rainbow-brackets = true;
         inline-diagnostics = {
@@ -122,8 +172,8 @@
         statusline = {
           left = ["mode" "version-control" "file-modification-indicator"];
           center = ["file-name"];
-          right = ["diagnostics" "file-type" "position-percentage" "position"];
-          separator = "│";
+          right = ["diagnostics" "file-encoding" "file-type" "position-percentage" "position"];
+          separator = " │ ";
           mode = {
             normal = "NOR";
             insert = "INS";
