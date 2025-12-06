@@ -21,7 +21,7 @@
         isLightMode = false;
         nightModeEnabled = true;
         nightModeTemperature = 3000;
-        nightModeHighTemperature = 3500;
+        nightModeHighTemperature = 3000;
         nightModeAutoEnabled = false;
       };
       settings = {
