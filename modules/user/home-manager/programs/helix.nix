@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    useDefaultEditor = true;
+    defaultEditor = true;
     package = pkgs.helix;
     extraPackages = with pkgs; [
       # Debugger
