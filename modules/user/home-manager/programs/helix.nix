@@ -198,7 +198,6 @@
           p = "paste_clipboard_before";
           P = "paste_clipboard_after";
           y = ["yank" "yank_joined_to_clipboard"];
-          j = {k = "normal_mode";};
           space = {
             R = "replace_with_yanked";
             p = "paste_before";
