@@ -41,5 +41,6 @@
 
   programs = {
     dconf.enable = true;
+    mpv.enable = true;
   };
 }
