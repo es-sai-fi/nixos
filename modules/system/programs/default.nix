@@ -32,6 +32,7 @@
       ffmpeg-full
       obs-cmd
       obs-studio
+      mpv
 
       discord
 
@@ -41,6 +42,5 @@
 
   programs = {
     dconf.enable = true;
-    mpv.enable = true;
   };
 }
