@@ -42,6 +42,7 @@
         {
           name = "nix";
           language-servers = ["nil" "statix"];
+          auto-format = true;
           formatter = {command = "alejandra";};
         }
         {
