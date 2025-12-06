@@ -26,8 +26,8 @@
       };
       settings = {
         theme = "dark";
-        showDock = true;
-        dockAutoHide = true;
+        #showDock = true;
+        #dockAutoHide = true;
         clockDateFormat = "yyyy-MM-dd";
         weatherEnabled = false;
         dankBarSquareCorners = true;
