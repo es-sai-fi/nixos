@@ -43,20 +43,61 @@
     };
     settings = {
       theme = "gruvbox_dark_soft";
+      keys = {
+        select = {
+          d = ["yank_joined_to_clipboard" "delete_selection"];
+          c = "change_selection_noyank";
+          R = "replace_selections_with_clipboard";
+          p = "paste_clipboard_before";
+          P = "paste_clipboard_after";
+          y = ["yank" "yank_joined_to_clipboard"];
+        };
+        normal = {
+          d = ["yank_joined_to_clipboard" "delete_selection"];
+          c = "change_selection_noyank";
+          R = "replace_selections_with_clipboard";
+          p = "paste_clipboard_before";
+          P = "paste_clipboard_after";
+          y = ["yank" "yank_joined_to_clipboard"];
+          space = {
+            R = "replace_with_yanked";
+            p = "paste_before";
+            P = "paste_after";
+            y = "yank";
+          };
+        };
+      };
       editor = {
         line-number = "relative";
         mouse = true;
         middle-click-paste = false;
+        soft-wrap = {
+          enable = true;
+          wrap-indicator = "↩ ";
+        };
+        whitespace = {
+          render = {
+            space = "all";
+            tab = "all";
+          };
+          characters = {
+            space = " ";
+            tab = "→";
+            tabpad = "·";
+          };
+        };
         color-modes = true;
         true-color = true;
-        auto-pairs = true;
+        auto-pairs = false;
+        auto-format = true;
         scrolloff = 10;
-        bufferline = "multiple";
+        bufferline = {
+          show = "multiple";
+          context = "minimal";
+        };
         end-of-line-diagnostics = "hint";
         clipboard-provider = "wayland";
-        lsp.display-messages = true;
-        auto-format = true;
-        rulers = [80];
+        rulers = [80 120];
         shell = ["fish" "-c"];
         cursor-shape = {
           insert = "bar";
@@ -67,23 +108,26 @@
           hidden = false;
         };
         indent-guides = {
+          character = "╎";
           render = true;
           raimbow = "normal";
         };
         rainbow-brackets = true;
         inline-diagnostics = {
-          cursor-line = "hint";
+          cursor-line = "warning";
         };
-        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        lsp = {
+          display-inlay-hints = true;
+        };
         statusline = {
-          left = ["mode" "selections" "spinner" "file-name" "total-line-numbers"];
-          center = [];
-          right = ["diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position"];
+          left = ["mode" "version-control" "file-modification-indicator"];
+          center = ["file-name"];
+          right = ["diagnostics" "file-type" "position-percentage" "position"];
           separator = "│";
           mode = {
-            normal = "NORMAL";
-            insert = "INSERT";
-            select = "SELECT";
+            normal = "NOR";
+            insert = "INS";
+            select = "SEL";
           };
           diagnostics = ["warning" "error"];
           workspace-diagnostics = ["warning" "error"];
