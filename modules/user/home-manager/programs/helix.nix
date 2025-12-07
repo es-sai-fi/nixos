@@ -5,6 +5,7 @@
     package = pkgs.helix;
     extraPackages = with pkgs; [
       # Debugger
+      delve
       lldb
 
       # Nix
@@ -125,10 +126,10 @@
         middle-click-paste = false;
         scrolloff = 10;
         rulers = [80];
-        auto-pairs = false;
-        auto-format = true;
         true-color = true;
+        undercurl = true;
         color-modes = true;
+        popup-border = true;
         clipboard-provider = "wayland";
 
         shell = ["fish" "-c"];
@@ -144,20 +145,9 @@
           wrap-indicator = "↩ ";
         };
 
-        whitespace = {
-          render = {
-            space = "all";
-            tab = "all";
-          };
-          characters = {
-            space = " ";
-            tab = "→";
-            tabpad = "·";
-          };
-        };
-
         indent-guides = {
           render = true;
+          character = "╎";
         };
         rainbow-brackets = true;
 
