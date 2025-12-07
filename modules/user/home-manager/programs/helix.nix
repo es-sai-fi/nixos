@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = pkgs.helix;
+    package = inputs.helix.packages.x86_64-linux.default;
     extraPackages = with pkgs; [
       # Debugger
       delve
