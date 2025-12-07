@@ -129,7 +129,7 @@
         true-color = true;
         undercurl = true;
         color-modes = true;
-        popup-border = true;
+        popup-border = "all";
         clipboard-provider = "wayland";
 
         shell = ["fish" "-c"];
