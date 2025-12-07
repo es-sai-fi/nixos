@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -6,7 +7,7 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.helix.packages.${config.nixpkgs.system}.default;
     extraPackages = with pkgs; [
       # Debugger
       delve

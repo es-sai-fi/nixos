@@ -1,6 +1,6 @@
 {
+  config,
   inputs,
-  pkgs,
   ...
 }: {
   programs.neovide = {
@@ -10,7 +10,7 @@
       frame = "none";
       idle = true;
       maximized = false;
-      neovim-bin = "${inputs.neovim-flake.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nvim";
+      neovim-bin = "${inputs.neovim-flake.packages.${config.nixpkgs.system}.default}/bin/nvim";
       no-multigrid = false;
       srgb = false;
       tabs = true;
