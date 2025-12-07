@@ -147,7 +147,7 @@
 
         indent-guides = {
           render = true;
-          character = "╎";
+          character = "┆";
         };
         rainbow-brackets = true;
 
