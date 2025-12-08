@@ -72,7 +72,8 @@
         {
           matches = [
             {
-              app-id = "neovide";
+              app-id = "Alacritty";
+              title = "^hx";
             }
           ];
           open-maximized = true;
@@ -85,8 +86,8 @@
       ];
 
       binds = with config.lib.niri.actions; {
+        "Mod+E".action = spawn ["alacritty" "-e" "fish" "-c" "hx"];
         "Mod+T".action = spawn "alacritty";
-        "Mod+E".action = spawn "neovide";
         "Mod+B".action = spawn "librewolf";
         "Mod+Y".action = spawn ["alacritty" "-e" "fish" "-c" "yazi"];
 
