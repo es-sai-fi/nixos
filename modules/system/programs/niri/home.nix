@@ -86,10 +86,10 @@
       ];
 
       binds = with config.lib.niri.actions; {
-        "Mod+E".action = spawn ["alacritty" "-e" "fish" "-c" "hx"];
+        "Mod+E".action = spawn ["alacritty" "-T" "hx" "-e" "fish" "-c" "hx"];
         "Mod+T".action = spawn "alacritty";
         "Mod+B".action = spawn "librewolf";
-        "Mod+Y".action = spawn ["alacritty" "-e" "fish" "-c" "yazi"];
+        "Mod+Y".action = spawn ["alacritty" "-T" "yazi" "-e" "fish" "-c" "yazi"];
 
         "Super+Shift+F1".action = spawn ["alacritty" "-e" "obs-cmd" "recording" "start"];
         "Super+Shift+F2".action = spawn ["alacritty" "-e" "obs-cmd" "recording" "stop"];
