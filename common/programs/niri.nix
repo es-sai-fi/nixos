@@ -32,7 +32,9 @@
     package = pkgs.niri-unstable;
   };
 
-  home-manager = {
-    users.es-sai-fi = import ./home.nix;
+  hjem.users.es-sai-fi.rum.desktops.niri = {
+    enable = true;
+    binds = {};
+    config = {};
   };
 }

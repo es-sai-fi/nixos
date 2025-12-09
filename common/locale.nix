@@ -1,16 +1,4 @@
-{pkgs, ...}: {
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    download-buffer-size = 134217728;
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
+{
   time.timeZone = "America/Bogota";
 
   i18n = {
@@ -29,13 +17,4 @@
   };
 
   console.keyMap = "es";
-
-  fonts.packages = with pkgs; [nerd-fonts.jetbrains-mono];
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  system.stateVersion = "25.05";
 }
