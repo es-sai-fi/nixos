@@ -229,7 +229,7 @@
 
       wrapProgram $out/bin/hx \
         --add-flag "-c" \
-        --add-flag "$out/share/helix-config/config.toml"
+        --add-flag "$out/config/config.toml"
     '';
   };
 in {
