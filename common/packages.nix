@@ -17,16 +17,8 @@
       obs-cmd
       obs-studio
       mpv
-
-      discord
-
-      minizinc
     ];
   };
 
-  fonts.packages = with pkgs; [nerd-fonts.jetbrains-mono];
-
-  programs = {
-    dconf.enable = true;
-  };
+  fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 }
