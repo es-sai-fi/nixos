@@ -1,12 +1,7 @@
 {
-  imports = [./hardware-configuration.nix];
+  imports = [./hardware-configuration.nix ./graphics.nix];
 
-  networking.hostName = "nixos";
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+  networking.hostName = "seer";
 
   system.stateVersion = "25.05";
 }
