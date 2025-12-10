@@ -225,13 +225,13 @@
     ];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
-      mkdir -p $out/config
-      cp ${configToml} $out/config/config.toml
-      cp ${languagesToml} $out/config/languages.toml
+      mkdir $out/helix
+      cp ${configToml} $out/helix/config.toml
+      cp ${languagesToml} $out/helix/languages.toml
 
       wrapProgram $out/bin/hx \
+        --set XDG_CONFIG_HOME $out
         --prefix PATH : ${lib.makeBinPath tooling}
-        --add-flag "-c $out/config"
     '';
   };
 in {
