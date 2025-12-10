@@ -8,5 +8,6 @@
     ./helix.nix
     ./niri.nix
     ./alacritty.nix
+    ./dconf.nix
   ];
 }
