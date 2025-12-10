@@ -234,6 +234,8 @@
     '';
   };
 in {
+  nix.settings = inputs.helix.nixConfig;
+
   environment = {
     systemPackages = [helixWrapped];
     sessionVariables.EDITOR = "hx";
