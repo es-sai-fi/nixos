@@ -1,26 +1,32 @@
-{pkgs, ...}: {
-  programs.alacritty = {
-    enable = true;
-  };
-
-  hjem.users.es-sai-fi.xdg.config.files."alacritty/alacritty.toml" = let
-    toml = pkgs.formats.toml {};
-    settings = {
-      general.import = ["${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night_storm.toml"];
-      window = {
-        opacity = 0.9;
-        decorations = "none";
-      };
-      font = {
-        normal = {
-          family = "JetBrainsMono Nerd Font Mono";
-          style = "regular";
-        };
-        size = 13;
-      };
-      terminal.shell = "${pkgs.fish}/bin/fish";
+{pkgs, ...}: let
+  toml = pkgs.formats.toml {};
+  alacrittyConfigFile = toml.generate "alacritty-config.tml" {
+    general.import = ["${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night_storm.toml"];
+    window = {
+      opacity = 0.9;
+      decorations = "none";
     };
-  in {
-    source = toml.generate "alacritty.toml" settings;
+    font = {
+      normal = {
+        family = "JetBrainsMono Nerd Font Mono";
+        style = "regular";
+      };
+      size = 13;
+    };
+    terminal.shell = "${pkgs.fish}/bin/fish";
   };
+  alacrittyWrapped = pkgs.symlinkJoin {
+    name = "alacritty-wrapped";
+    paths = [pkgs.alacritty];
+    buildInputs = [pkgs.makeWrapper];
+    postBuild = ''
+      mkdir $out/alacritty
+      cp ${alacrittyConfigFile} $out/alacritty/alacritty.toml
+
+      wrapProgram $out/bin/alacritty \
+        --set XDG_CONFIG_HOME $out
+    '';
+  };
+in {
+  environment.systemPackages = [alacrittyWrapped];
 }
