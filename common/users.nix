@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   users.users.es-sai-fi = {
     isNormalUser = true;
     description = "es-sai-fi";
@@ -8,16 +8,5 @@
       "podman"
     ];
     packages = [];
-  };
-
-  hjem = {
-    extraModules = [
-      inputs.hjem-rum.hjemModules.default
-    ];
-    users.es-sai-fi = {
-      directory = "/home/es-sai-fi";
-      user = "es-sai-fi";
-    };
-    clobberByDefault = true;
   };
 }

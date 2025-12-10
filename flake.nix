@@ -8,19 +8,6 @@
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
-    hjem = {
-      type = "github";
-      owner = "feel-co";
-      repo = "hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hjem-rum = {
-      type = "github";
-      owner = "snugnug";
-      repo = "hjem-rum";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hjem.follows = "hjem";
-    };
     aagl = {
       type = "github";
       owner = "ezKEa";
@@ -31,12 +18,6 @@
       type = "github";
       owner = "sodiboo";
       repo = "niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-flake = {
-      type = "github";
-      owner = "es-sai-fi";
-      repo = "neovim-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak = {
@@ -79,7 +60,6 @@
         modules = [
           ./hosts/desktop
           ./common
-          inputs.hjem.nixosModules.default
         ];
       };
     };
