@@ -229,7 +229,7 @@
       cp ${helixLanguagesFile} $out/helix/languages.toml
 
       wrapProgram $out/bin/hx \
-        --set XDG_CONFIG_HOME $out
+        --set XDG_CONFIG_HOME $out \
         --prefix PATH : ${lib.makeBinPath tooling}
     '';
   };
