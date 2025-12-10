@@ -15,7 +15,6 @@
       inputs.hjem-rum.hjemModules.default
     ];
     users.es-sai-fi = {
-      enable = true;
       directory = "/home/es-sai-fi";
       user = "es-sai-fi";
     };
