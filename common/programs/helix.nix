@@ -111,6 +111,11 @@
         command = "statix";
         args = ["check"];
       };
+
+      biome = {
+        command = "biome";
+        args = ["lint"];
+      };
     };
 
     language = [
@@ -141,6 +146,7 @@
       }
       {
         name = "javascript";
+        language-servers = ["typescript-language-server" "biome"];
         auto-format = true;
         formatter = {
           command = "biome";
@@ -149,6 +155,7 @@
       }
       {
         name = "typescript";
+        language-servers = ["typescript-language-server" "biome"];
         auto-format = true;
         formatter = {
           command = "biome";
