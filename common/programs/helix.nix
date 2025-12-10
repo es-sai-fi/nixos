@@ -132,7 +132,7 @@
       }
       {
         name = "python";
-        language-servers = ["basedpyright" "ruff"];
+        language-servers = ["pyrefly" "ruff"];
         auto-format = true;
         formatter = {
           command = "ruff";
@@ -196,7 +196,7 @@
     stylua
 
     # Python
-    basedpyright
+    pyrefly
     ruff
 
     # JavaScript/TypeScript
