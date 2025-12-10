@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   pkgs,
   ...
 }: let
@@ -181,55 +182,56 @@
       }
     ];
   };
+  tooling = with pkgs; [
+    # Debugger
+    delve
+    lldb
+
+    # Nix
+    alejandra
+    nil
+    statix
+
+    # Lua
+    lua-language-server
+    stylua
+
+    # Python
+    basedpyright
+    ruff
+
+    # JavaScript/TypeScript
+    typescript-language-server
+    biome
+
+    # Rust
+    rust-analyzer
+    clippy
+    rustfmt
+
+    # Go
+    go
+    golangci-lint
+    gopls
+    gofumpt
+
+    # C/C++
+    clang-tools
+  ];
   helix-wrapped = pkgs.symlinkJoin {
     name = "helix-wrapped";
-    paths = with pkgs; [
+    paths = [
       inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-      # Debugger
-      delve
-      lldb
-
-      # Nix
-      alejandra
-      nil
-      statix
-
-      # Lua
-      lua-language-server
-      stylua
-
-      # Python
-      basedpyright
-      ruff
-
-      # JavaScript/TypeScript
-      typescript-language-server
-      biome
-
-      # Rust
-      rust-analyzer
-      clippy
-      rustfmt
-
-      # Go
-      go
-      golangci-lint
-      gopls
-      gofumpt
-
-      # C/C++
-      clang-tools
     ];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
-      mkdir -p $out/config/
+      mkdir -p $out/config
       cp ${configToml} $out/config/config.toml
       cp ${languagesToml} $out/config/languages.toml
 
       wrapProgram $out/bin/hx \
-        --add-flag "-c" \
-        --add-flag "$out/config/config.toml"
+        --prefix PATH : ${lib.makeBinPath tooling}
+        --add-flag "-c $out/config"
     '';
   };
 in {
