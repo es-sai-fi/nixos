@@ -5,7 +5,7 @@
   ...
 }: let
   toml = pkgs.formats.toml {};
-  configToml = toml.generate "helix-config.toml" {
+  helixConfigFile = toml.generate "helix-config.toml" {
     theme = "gruvbox_dark_soft";
 
     editor = {
@@ -105,8 +105,7 @@
       };
     };
   };
-
-  languagesToml = toml.generate "helix-languages.toml" {
+  helixLanguagesFile = toml.generate "helix-languages.toml" {
     language-server = {
       statix = {
         command = "statix";
@@ -218,7 +217,7 @@
     # C/C++
     clang-tools
   ];
-  helix-wrapped = pkgs.symlinkJoin {
+  helixWrapped = pkgs.symlinkJoin {
     name = "helix-wrapped";
     paths = [
       inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -226,8 +225,8 @@
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir $out/helix
-      cp ${configToml} $out/helix/config.toml
-      cp ${languagesToml} $out/helix/languages.toml
+      cp ${helixConfigFile} $out/helix/config.toml
+      cp ${helixLanguagesFile} $out/helix/languages.toml
 
       wrapProgram $out/bin/hx \
         --set XDG_CONFIG_HOME $out
@@ -236,7 +235,7 @@
   };
 in {
   environment = {
-    systemPackages = [helix-wrapped];
+    systemPackages = [helixWrapped];
     sessionVariables.EDITOR = "hx";
   };
 }
