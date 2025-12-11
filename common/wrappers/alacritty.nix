@@ -15,8 +15,8 @@
     };
     terminal.shell = "${pkgs.fish}/bin/fish";
   };
-in {
-  alacrittyWrapped = pkgs.symlinkJoin {
+in
+  pkgs.symlinkJoin {
     name = "alacritty-wrapped";
     paths = [pkgs.alacritty];
     buildInputs = [pkgs.makeWrapper];
@@ -27,5 +27,4 @@ in {
       wrapProgram $out/bin/alacritty \
         --set XDG_CONFIG_HOME $out
     '';
-  };
-}
+  }

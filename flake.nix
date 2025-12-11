@@ -31,7 +31,7 @@
       repo = "dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dankMaterialShell = {
+    dms = {
       type = "github";
       owner = "AvengeMedia";
       repo = "DankMaterialShell";

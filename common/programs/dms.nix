@@ -5,7 +5,7 @@
 }: let
   dmsWrapped = import ../wrappers/dms.nix {
     inherit pkgs;
-    dms = inputs.dms;
+    dms = inputs.dms.packages.${pkgs.stdenv.hostPlaform.system}.default;
   };
 in {
   imports = [

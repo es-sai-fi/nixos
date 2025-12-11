@@ -9,8 +9,8 @@
       name = "es-sai-fi";
     };
   };
-in {
-  gitWrapped = pkgs.symlinkJoin {
+in
+  pkgs.symlinkJoin {
     name = "git-wrapped";
     paths = [
       pkgs.git
@@ -23,5 +23,4 @@ in {
       wrapProgram $out/bin/git \
         --set XDG_CONFIG_HOME $out
     '';
-  };
-}
+  }

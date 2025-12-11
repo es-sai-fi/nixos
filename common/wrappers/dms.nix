@@ -25,10 +25,10 @@
     nightModeHighTemperature = 3000;
     nightModeAutoEnabled = false;
   };
-in {
-  dmsWrapped = pkgs.symlinkJoin {
+in
+  pkgs.symlinkJoin {
     name = "dms-wrapped";
-    paths = [dms.packages.${pkgs.stdenv.hostPlatform.system}.default];
+    paths = [dms];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir $out/DankMaterialShell
@@ -39,5 +39,4 @@ in {
         -set XDG_CONFIG_HOME $out \
         -set XDG_STATE_DIR $out
     '';
-  };
-}
+  }

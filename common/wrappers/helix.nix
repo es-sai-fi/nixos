@@ -223,11 +223,11 @@
     # C/C++
     clang-tools
   ];
-in {
-  helixWrapped = pkgs.symlinkJoin {
+in
+  pkgs.symlinkJoin {
     name = "helix-wrapped";
     paths = [
-      helix.packages.${pkgs.stdenv.hostPlatform.system}.default
+      helix
     ];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
@@ -239,5 +239,4 @@ in {
         --set XDG_CONFIG_HOME $out \
         --prefix PATH : ${lib.makeBinPath tooling}
     '';
-  };
-}
+  }
