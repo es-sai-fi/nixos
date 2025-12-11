@@ -28,6 +28,6 @@ in
 
       wrapProgram $out/bin/yazi \
         --prefix PATH : ${lib.makeBinPath extraPackages} \
-        --set YAZI_CONFIG_DIR $out/yazi
+        --set YAZI_CONFIG_HOME $out/yazi
     '';
   }
