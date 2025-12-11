@@ -187,7 +187,7 @@
       }
     ];
   };
-  tooling = with pkgs; [
+  extraPackages = with pkgs; [
     # Debugger
     delve
     lldb
@@ -234,7 +234,7 @@ in
       cp ${helixLanguagesFile} $out/helix/languages.toml
 
       wrapProgram $out/bin/hx \
-        --set XDG_CONFIG_HOME $out \
-        --prefix PATH : ${lib.makeBinPath tooling}
+        --prefix PATH : ${lib.makeBinPath extraPackages} \
+        --set XDG_CONFIG_HOME $out
     '';
   }
