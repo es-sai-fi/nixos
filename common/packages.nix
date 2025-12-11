@@ -6,7 +6,6 @@
       openssh
       wget
 
-      bleachbit
       lm_sensors
       tealdeer
       unzip
