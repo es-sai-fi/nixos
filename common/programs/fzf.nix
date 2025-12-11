@@ -7,4 +7,9 @@
       FZF_ALT_C_COMMAND = "fd --type d --color always --exclude .git --ignore-file ~/.gitignore";
     };
   };
+
+  programs.fzf = {
+    fuzzyCompletion = true;
+    keybindings = true;
+  };
 }
