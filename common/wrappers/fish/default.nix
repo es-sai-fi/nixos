@@ -7,7 +7,7 @@ pkgs.symlinkJoin {
     mkdir $out/fish
     ln -s ${./functions} $out/fish/functions
 
-    wrapProgam $out/bin/fish \
+    wrapProgram $out/bin/fish \
       --set XDG_CONFIG_HOME $out
   '';
 }
