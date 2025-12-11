@@ -4,7 +4,10 @@ pkgs.symlinkJoin {
   paths = [pkgs.fish];
   buildInputs = [pkgs.makeWrapper];
   postBuild = ''
-    rm -r $out/share/fish/vendor_functions.d
-    ln -s ${./functions} $out/share/fish/vendor_functions.d
+    mkdir $out/fish
+    ln -s ${./functions} $out/fish/functions
+
+    wrapProgam $out/bin/fish \
+      --set XDG_CONFIG_HOME $out
   '';
 }
