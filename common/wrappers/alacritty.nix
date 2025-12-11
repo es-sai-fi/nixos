@@ -25,6 +25,6 @@ in
       cp ${alacrittyConfigFile} $out/alacritty/alacritty.toml
 
       wrapProgram $out/bin/alacritty \
-        --set XDG_CONFIG_HOME $out
+        --add-flags  "--config-file $out/alacritty/alacritty.toml"
     '';
   }
