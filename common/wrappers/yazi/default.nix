@@ -12,7 +12,7 @@
     };
   };
   yaziThemeFile = toml.generate "yazi-theme.toml" {
-    flavor.dark = "gruvbox";
+    flavor.dark = "gruvbox-dark";
   };
   extraPackages = with pkgs; [jq fd fzf ripgrep zoxide _7zz wl-clipboard];
 in
