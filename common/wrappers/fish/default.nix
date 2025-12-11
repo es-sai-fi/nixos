@@ -1,7 +1,7 @@
 {pkgs}:
 pkgs.symlinkJoin {
   name = "fish-wrapped";
-  path = [pkgs.fish];
+  paths = [pkgs.fish];
   buildInputs = [pkgs.makeWrapper];
   postBuild = ''
     rm -r $out/share/fish/vendor_functions.d
