@@ -47,18 +47,52 @@
           lib = pkgs.lib;
         };
       in
-        pkgs.mkShell {
+        pkgs.mkShellNoCC {
           packages = [
             helixWrapped
           ];
         };
-      dms = let
-        dmsWrapped = import ../common/wrappers/dms.nix {
+      bottom = let
+        bottomWrapped = import ../common/wrappers/bottom.nix {
           inherit pkgs;
-          dms = inputs.dms.packages.system.default;
         };
       in
-        pkgs.mkShellNoCC {packages = [dmsWrapped];};
+        pkgs.mkShellNoCC {
+          packages = [
+            bottomWrapped
+          ];
+        };
+      yazi = let
+        yaziWrapped = import ../common/wrappers/yazi {
+          inherit pkgs;
+          lib = pkgs.lib;
+        };
+      in
+        pkgs.mkShellNoCC {
+          packages = [
+            yaziWrapped
+          ];
+        };
+      fish = let
+        fishWrapped = import ../common/wrappers/fish {
+          inherit pkgs;
+        };
+      in
+        pkgs.mkShellNoCC {
+          packages = [
+            fishWrapped
+          ];
+        };
+      alacritty = let
+        alacrittyWrapped = import ../common/wrappers/alacritty.nix {
+          inherit pkgs;
+        };
+      in
+        pkgs.mkShellNoCC {
+          packages = [
+            alacrittyWrapped
+          ];
+        };
     };
   };
 }
