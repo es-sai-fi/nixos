@@ -107,6 +107,18 @@
             batWrapped
           ];
         };
+      tealdeer = let
+        tealdeerWrapped = import ../common/wrappers/tealdeer.nix {inherit pkgs;};
+        batWrapped = import ../common/wrappers/bat.nix {
+          inherit pkgs;
+        };
+      in
+        pkgs.mkShellNoCC {
+          packages = [
+            tealdeerWrapped
+            batWrapped
+          ];
+        };
     };
   };
 }
