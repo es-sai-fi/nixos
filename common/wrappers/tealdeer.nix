@@ -10,7 +10,7 @@ in
     paths = [pkgs.tealdeer];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
-      mkdir tealdeer
+      mkdir $out/tealdeer
       cp ${tealdeerConfigFile} $out/tealdeer/config.toml
 
       wrapProgram $out/bin/tldr \
