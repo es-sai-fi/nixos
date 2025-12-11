@@ -2,12 +2,12 @@
   imports = [
     ./programs
     ./boot.nix
-    ./networking.nix
-    ./security.nix
     ./locale.nix
+    ./networking.nix
     ./nix.nix
-    ./variables.nix
     ./packages.nix
+    ./security.nix
     ./users.nix
+    ./variables.nix
   ];
 }

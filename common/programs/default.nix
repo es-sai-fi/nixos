@@ -1,13 +1,19 @@
 {
   imports = [
-    ./alacritty.nix
-    ./git.nix
     ./aagl.nix
+    ./alacritty.nix
+    ./bat.nix
+    ./bottom.nix
+    ./dconf.nix
     ./dms.nix
+    ./fish.nix
     ./fzf.nix
+    ./git.nix
     ./helix.nix
     ./niri.nix
-    ./alacritty.nix
-    ./dconf.nix
+    ./starship.nix
+    ./tealdeer.nix
+    ./yazi.nix
+    ./zoxide.nix
   ];
 }
