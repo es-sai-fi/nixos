@@ -30,13 +30,15 @@ in
     name = "dms-wrapped";
     paths = [dms];
     buildInputs = [pkgs.makeWrapper];
+    # HACK: we do this to avoid dms writting to XDG_CONFIG_HOME and XDG_STATE_DIR.
+    # This is a really ugly hack but oh well what can we do...
     postBuild = ''
-      mkdir $out/DankMaterialShell
-      cp ${dmsDefaultConfigFile} $out/DankMaterialShell/default-settings.json
-      cp ${dmsDefaultSessionFile} $out/DankMaterialShell/default-session.json
+      mkdir /tmp/DankMaterialShell
+      cp ${dmsDefaultConfigFile} /tmp/DankMaterialShell/default-settings.json
+      cp ${dmsDefaultSessionFile} /tmp/DankMaterialShell/default-session.json
 
       wrapProgram $out/bin/dms \
-        -set XDG_CONFIG_HOME $out \
-        -set XDG_STATE_DIR $out
+        --set XDG_CONFIG_HOME /tmp \
+        --set XDG_STATE_DIR /tmp
     '';
   }
