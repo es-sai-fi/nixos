@@ -24,7 +24,7 @@ in
       mkdir $out/yazi
       cp ${yaziConfigFile} $out/yazi/yazi.toml
       cp ${yaziThemeFile} $out/yazi/theme.toml
-      ln -s {./flavors} $out/yazi/flavors
+      ln -s ${./flavors} $out/yazi/flavors
 
       wrapProgram $out/bin/yazi \
         --prefix PATH : ${lib.makeBinPath extraPackages} \
