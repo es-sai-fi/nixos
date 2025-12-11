@@ -12,9 +12,7 @@
 in
   pkgs.symlinkJoin {
     name = "git-wrapped";
-    paths = [
-      pkgs.git
-    ];
+    paths = [pkgs.git];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir -p $out/git
