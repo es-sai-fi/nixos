@@ -12,6 +12,11 @@
       unzip
       xdg-utils
       zip
+      ripgrep
+      eza
+      fd
+      jq
+      wl-clipboard
 
       ffmpeg-full
       obs-cmd
