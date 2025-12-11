@@ -97,6 +97,16 @@
             fishWrapped
           ];
         };
+      bat = let
+        batWrapped = import ../common/wrappers/bat.nix {
+          inherit pkgs;
+        };
+      in
+        pkgs.mkShellNoCC {
+          packages = [
+            batWrapped
+          ];
+        };
     };
   };
 }
