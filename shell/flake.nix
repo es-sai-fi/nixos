@@ -87,10 +87,14 @@
         alacrittyWrapped = import ../common/wrappers/alacritty.nix {
           inherit pkgs;
         };
+        fishWrapped = import ../common/wrappers/fish {
+          inherit pkgs;
+        };
       in
         pkgs.mkShellNoCC {
           packages = [
             alacrittyWrapped
+            fishWrapped
           ];
         };
     };
