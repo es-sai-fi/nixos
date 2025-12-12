@@ -1,6 +1,6 @@
 {
   programs.starship = {
     enable = true;
-    presets = "nerd-font-symbols";
+    presets = ["nerd-font-symbols"];
   };
 }
