@@ -1,7 +1,7 @@
 {pkgs}: let
   toml = pkgs.formats.toml {};
   alacrittyConfigFile = toml.generate "alacritty-config.tml" {
-    general.import = ["${pkgs.alacritty-theme}/share/alacritty-theme/tokyo_night_storm.toml"];
+    general.import = ["${pkgs.alacritty-theme}/share/alacritty-theme/gruvbox_material_medium_dark.toml"];
     window = {
       opacity = 0.9;
       decorations = "none";
