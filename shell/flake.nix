@@ -71,6 +71,9 @@
         tealdeerWrapped = import ../common/wrappers/tealdeer.nix {
           inherit pkgs;
         };
+        fzfWrapped = import ../common/wrappers/fzf.nix {
+          inherit pkgs;
+        };
       in
         pkgs.mkShellNoCC {
           env = {
@@ -84,6 +87,7 @@
             helixWrapped
             tealdeerWrapped
             yaziWrapped
+            fzfWrapped
           ];
         };
       helix = let
