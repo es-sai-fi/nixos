@@ -8,7 +8,7 @@
     inherit pkgs dmsPackage;
   };
 in {
-  environment.systePackages = [dgopPackage];
+  environment.systemPackages = [dgopPackage];
 
   programs.dms-shell = {
     enable = true;
