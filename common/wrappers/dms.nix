@@ -1,6 +1,6 @@
 {
   pkgs,
-  package,
+  dmsPackage,
 }: let
   json = pkgs.formats.json {};
   dmsDefaultConfigFile = json.generate "dms-default-config.json" {
@@ -34,7 +34,7 @@
 in
   pkgs.symlinkJoin {
     name = "dms-wrapped";
-    paths = [package];
+    paths = [dmsPackage];
     buildInputs = [pkgs.makeWrapper];
     # HACK: we do this to avoid dms writting to XDG_CONFIG_HOME and XDG_STATE_DIR.
     # This is a really ugly hack but oh well what can we do...

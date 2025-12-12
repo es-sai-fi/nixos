@@ -1,11 +1,6 @@
-{
-  pkgs,
-  niri,
-}: let
+{pkgs}: let
   niriWrapped = import ../wrappers/niri.nix {inherit pkgs;};
 in {
-  imports = [niri.nixosModules.niri];
-
   environment.systemPackages = with pkgs; [
     nautilus
   ];

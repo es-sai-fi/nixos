@@ -6,7 +6,7 @@
 }: let
   helixWrapped = import ../wrappers/helix.nix {
     inherit pkgs lib;
-    helix = helix.packages.${system}.default;
+    helixPackage = helix.packages.${system}.default;
   };
 in {
   nix.settings = helix.nixConfig;
