@@ -40,6 +40,52 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     devShells.x86_64-linux = {
+      default = let
+        helixWrapped = import ../common/wrappers/helix.nix {
+          inherit pkgs;
+          helix = inputs.helix.packages.${system}.default;
+          lib = pkgs.lib;
+        };
+
+        bottomWrapped = import ../common/wrappers/bottom.nix {
+          inherit pkgs;
+        };
+
+        yaziWrapped = import ../common/wrappers/yazi {
+          inherit pkgs;
+          lib = pkgs.lib;
+        };
+
+        fishWrapped = import ../common/wrappers/fish {
+          inherit pkgs;
+        };
+
+        alacrittyWrapped = import ../common/wrappers/alacritty.nix {
+          inherit pkgs;
+        };
+
+        batWrapped = import ../common/wrappers/bat.nix {
+          inherit pkgs;
+        };
+
+        tealdeerWrapped = import ../common/wrappers/tealdeer.nix {
+          inherit pkgs;
+        };
+      in
+        pkgs.mkShellNoCC {
+          env = {
+            PAGER = "bat";
+          };
+          packages = [
+            alacrittyWrapped
+            batWrapped
+            bottomWrapped
+            fishWrapped
+            helixWrapped
+            tealdeerWrapped
+            yaziWrapped
+          ];
+        };
       helix = let
         helixWrapped = import ../common/wrappers/helix.nix {
           inherit pkgs;
