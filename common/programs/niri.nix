@@ -3,6 +3,7 @@
 in {
   environment.systemPackages = with pkgs; [
     nautilus
+    xwayland-satellite
   ];
 
   xdg.portal = {
