@@ -1,7 +1,7 @@
-{inputs, ...}: {
-  imports = [inputs.aagl.nixosModules.default];
+{aagl}: {
+  imports = [aagl.nixosModules.default];
 
-  nix.settings = inputs.aagl.nixConfig;
+  nix.settings = aagl.nixConfig;
 
   programs = {
     anime-game-launcher.enable = true;

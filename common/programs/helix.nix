@@ -1,18 +1,19 @@
 {
-  inputs,
-  lib,
+  system,
   pkgs,
-  ...
+  lib,
+  helix,
 }: let
   helixWrapped = import ../wrappers/helix.nix {
     inherit pkgs lib;
-    helix = inputs.helix.packages.${pkgs.stdenv.hostPlaform.system}.default;
+    helix = helix.packages.${system}.default;
   };
 in {
-  nix.settings = inputs.helix.nixConfig;
+  nix.settings = helix.nixConfig;
 
   environment = {
     systemPackages = [helixWrapped];
     sessionVariables.EDITOR = "hx";
+    sessionVariables.VISUAL = "hx";
   };
 }

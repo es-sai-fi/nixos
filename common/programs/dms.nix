@@ -1,15 +1,15 @@
 {
-  inputs,
+  system,
   pkgs,
-  ...
+  dms,
 }: let
   dmsWrapped = import ../wrappers/dms.nix {
     inherit pkgs;
-    dms = inputs.dms.packages.${pkgs.stdenv.hostPlaform.system}.default;
+    package = dms.packages.${system}.default;
   };
 in {
   imports = [
-    inputs.dms.nixosModules.dankMaterialShell.default
+    dms.nixosModules.dankMaterialShell.default
   ];
 
   programs.dankMaterialShell = {

@@ -1,13 +1,10 @@
 {
-  inputs,
   pkgs,
-  ...
-}: {
-  imports = [inputs.niri-flake.nixosModules.niri];
-
-  nixpkgs.overlays = [
-    inputs.niri-flake.overlays.niri
-  ];
+  niri,
+}: let
+  niriWrapped = import ../wrappers/niri.nix {inherit pkgs;};
+in {
+  imports = [niri.nixosModules.niri];
 
   environment.systemPackages = with pkgs; [
     nautilus
@@ -29,12 +26,6 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
-  };
-
-  hjem.users.es-sai-fi.rum.desktops.niri = {
-    enable = true;
-    binds = {};
-    config = {};
+    package = niriWrapped;
   };
 }

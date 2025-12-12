@@ -1,7 +1,7 @@
 {
-  helix,
-  lib,
   pkgs,
+  lib,
+  package,
 }: let
   toml = pkgs.formats.toml {};
   helixConfigFile = toml.generate "helix-config.toml" {
@@ -226,7 +226,7 @@
 in
   pkgs.symlinkJoin {
     name = "helix-wrapped";
-    paths = [helix];
+    paths = [package];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir $out/helix

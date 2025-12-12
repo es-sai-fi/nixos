@@ -1,22 +1,28 @@
 {
-  dms,
   pkgs,
+  package,
 }: let
   json = pkgs.formats.json {};
   dmsDefaultConfigFile = json.generate "dms-default-config.json" {
-    theme = "dark";
     clockDateFormat = "yyyy-MM-dd";
     weatherEnabled = false;
     dankBarSquareCorners = true;
     nightModeEnabled = true;
-    rightWidgets = [
+    barConfigs.rightWidgets = [
       "systemTray"
+      "cpuTemp"
       "cpuUsage"
       "memUsage"
       "notificationButton"
       "battery"
       "controlCenterButton"
     ];
+    sortAppsAlphabetically = true;
+    appLauncherViewMode = "grid";
+    spotlightModalViewMode = "grid";
+    fontFamily = "JetBrainsMonoNL Nerd Font";
+    monoFontFamily = "JetBransMonoNL Nerd Font Mono";
+    launcherLogoMode = "os";
   };
   dmsDefaultSessionFile = json.generate "dms-default-session.json" {
     isLightMode = false;
@@ -28,7 +34,7 @@
 in
   pkgs.symlinkJoin {
     name = "dms-wrapped";
-    paths = [dms];
+    paths = [package];
     buildInputs = [pkgs.makeWrapper];
     # HACK: we do this to avoid dms writting to XDG_CONFIG_HOME and XDG_STATE_DIR.
     # This is a really ugly hack but oh well what can we do...

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs}: let
   batWrapped = import ../wrappers/bat.nix {inherit pkgs;};
 in {
   environment.variables = {

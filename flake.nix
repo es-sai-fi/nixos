@@ -1,6 +1,5 @@
 {
   description = "System flake";
-
   inputs = {
     nixpkgs = {
       type = "github";
@@ -13,17 +12,6 @@
       owner = "ezKEa";
       repo = "aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    niri-flake = {
-      type = "github";
-      owner = "sodiboo";
-      repo = "niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-flatpak = {
-      type = "github";
-      owner = "gmodena";
-      repo = "nix-flatpak";
     };
     dgop = {
       type = "github";
@@ -46,20 +34,33 @@
       repo = "helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      type = "github";
+      owner = "sodiboo";
+      repo = "niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-flatpak = {
+      type = "github";
+      owner = "gmodena";
+      repo = "nix-flatpak";
+    };
   };
-
   outputs = {
     self,
     nixpkgs,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    lib = nixpkgs.lib;
+  in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+      seer = lib.nixosSystem {
+        inherit system;
         modules = [
           ./hosts/desktop
-          ./common
+          (import ./common {inherit system pkgs lib inputs;})
         ];
       };
     };
