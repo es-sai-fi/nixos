@@ -16,4 +16,5 @@ in
       wrapProgram $out/bin/tldr \
         --set TEALDEER_CONFIG_DIR $out/tealdeer
     '';
+    meta.mainProgram = "tldr";
   }

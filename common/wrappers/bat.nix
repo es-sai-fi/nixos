@@ -8,4 +8,5 @@ pkgs.symlinkJoin {
       --set BAT_THEME gruvbox-dark \
       --set BAT_PAGER builtin
   '';
+  meta.mainProgram = "bat";
 }

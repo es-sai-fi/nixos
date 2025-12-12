@@ -9,4 +9,5 @@ pkgs.symlinkJoin {
       --set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND" \
       --set FZF_ALT_C_COMMAND "fd --type d --color always --exclude .git --ignore-file ~/.gitignore"
   '';
+  meta.mainProgram = "fzf";
 }

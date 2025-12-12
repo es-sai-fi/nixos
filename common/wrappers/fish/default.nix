@@ -6,4 +6,5 @@ pkgs.symlinkJoin {
     rm -r $out/share/fish/vendor_functions.d
     ln -s ${./functions} $out/share/fish/vendor_functions.d
   '';
+  meta.mainProgram = "fish";
 }

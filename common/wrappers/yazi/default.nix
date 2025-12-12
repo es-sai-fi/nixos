@@ -30,4 +30,5 @@ in
         --prefix PATH : ${lib.makeBinPath extraPackages} \
         --set YAZI_CONFIG_HOME $out/yazi
     '';
+    meta.mainProgram = "yazi";
   }

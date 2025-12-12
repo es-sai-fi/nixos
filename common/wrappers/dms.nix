@@ -47,4 +47,5 @@ in
         --set XDG_CONFIG_HOME /tmp \
         --set XDG_STATE_DIR /tmp
     '';
+    meta.mainProgram = "dms";
   }

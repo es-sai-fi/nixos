@@ -27,4 +27,5 @@ in
       wrapProgram $out/bin/alacritty \
         --add-flags  "--config-file $out/alacritty/alacritty.toml"
     '';
+    meta.mainProgram = "alacritty";
   }

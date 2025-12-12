@@ -21,4 +21,5 @@ in
       wrapProgram $out/bin/git \
         --set XDG_CONFIG_HOME $out
     '';
+    meta.mainProgram = "git";
   }

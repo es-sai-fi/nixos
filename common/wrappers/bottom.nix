@@ -7,4 +7,5 @@ pkgs.symlinkJoin {
     wrapProgram $out/bin/btm \
       --add-flag "--theme gruvbox"
   '';
+  meta.mainProgram = "btm";
 }
