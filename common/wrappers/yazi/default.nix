@@ -18,7 +18,7 @@
 in
   pkgs.symlinkJoin {
     name = "yazi-wrapped";
-    paths = [pkgs.yazi];
+    paths = [pkgs.yazi-unwrapped];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir $out/yazi
