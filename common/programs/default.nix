@@ -22,6 +22,7 @@ in {
     (import ./tealdeer.nix {inherit pkgs;})
     (import ./yazi.nix {inherit pkgs lib;})
     ./dconf.nix
+    ./nh.nix
     ./starship.nix
     ./zoxide.nix
   ];
