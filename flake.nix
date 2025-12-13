@@ -7,6 +7,11 @@
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
+    sops-nix = {
+      type = "github";
+      owner = "Mic92";
+      repo = "sops-nix";
+    };
     aagl = {
       type = "github";
       owner = "ezKEa";
