@@ -23,3 +23,10 @@ This repository is released under the **Unlicense**.
 
 The code is provided **as-is**, without warranty of any kind.  
 For full details, see the `LICENSE` file.
+
+
+## Archival notice
+
+This repository will be archived after I finish the rewrite and merge the changes into `main`.
+
+It will be archived due to a migration to Codeberg.
